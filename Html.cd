@@ -1,0 +1,1328 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="ISO-8859-1"> 
+<title>Loan Documents-Savings</title> 
+</head> 
+<body> 
+<div id="div_PageLoad"> 
+  <div class="headerStyle row"> 
+    <div class="col-lg-2 col-md-2 col-md-2 col-xs-12" 
+      style="width: 250px;"> 
+      <label class="labelPageName" id="pagelabel">Loan Documents-Savings</label> 
+    </div> 
+    <div style="text-align: right; padding-right: 20px; float: none;"> 
+      <button id="button_Update" style="width: 80px" 
+        onclick="onGenarateClick();">Generate</button> 
+      <button id="button_Cancel" style="width: 80px;">Back</button> 
+    </div> 
+  </div> 
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mainBoxTest"> 
+    <div class="fieldlist"> 
+      <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12" 
+        style="padding-bottom: 6px;"> 
+
+        <label>State:</label> 
+
+        <div> 
+          <input id="dropDownList_State" style="width: 150px"> 
+        </div> 
+      </div> 
+      <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12" 
+        style="padding-bottom: 6px;"> 
+
+        <label>Division:</label> 
+
+        <div> 
+          <input id="dropDownList_Division" style="width: 150px"> 
+        </div> 
+      </div> 
+      <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12" 
+        style="padding-bottom: 6px;"> 
+
+        <label for="dropDown_Region">Region:</label> 
+
+        <div> 
+          <input id="dropDownList_Region" style="width: 150px"> 
+        </div> 
+      </div> 
+      <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12" 
+        style="padding-bottom: 6px;"> 
+
+        <label for="dropDown_Branch">Branch:</label> 
+
+        <div> 
+          <input id="dropDownList_Branch" style="width: 150px"> 
+        </div> 
+      </div> 
+      <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12" 
+        style="padding-bottom: 6px;"> 
+
+        <label for="datePicker_AsOnDate">Date:</label> 
+
+        <div> 
+          <input id="datePicker_AsOnDate" style="width: 150px"> 
+        </div> 
+      </div> 
+
+    </div> 
+  </div> 
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mainBoxTest"> 
+    <div class="fieldlist"> 
+      <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12" 
+        style="padding-bottom: 6px;"> 
+        <label for="dropDown_Group">Group:</label> 
+        <div> 
+          <input id="dropDown_Group" style="width: 150px"> 
+        </div> 
+      </div> 
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12"> 
+        <label for="dropDown_DocumentType">Document Type:</label> 
+        <div> 
+          <input id="dropDown_DocumentType" style="width: 150px"> 
+        </div> 
+      </div> 
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12" id="VernacularLanguages"> 
+        <label for="dropDown_VernacularLanguages">JLG Declaration Languages:</label> 
+        <div> 
+          <input id="dropDown_VernacularLanguages" style="width: 150px"> 
+        </div> 
+      </div> 
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12" id="JLGLoanAgreementVernacularLanguages"> 
+        <label for="dropDown_JLGLoanAgreementVernacularLanguages" style="width: 200px">JLG Loan Agreement Languages:</label> 
+        <div> 
+          <input id="dropDown_JLGLoanAgreementVernacularLanguages" style="width: 150px"> 
+        </div> 
+      </div> 
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12" id="SALAVernacularLanguages"> 
+        <label for="dropDown_SALAVernacularLanguages" style="width: 200px">SA And LA Vernacular Languages:</label> 
+        <div> 
+          <input id="dropDown_SALAVernacularLanguages" style="width: 150px"> 
+        </div> 
+      </div> 
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12" id="FactSheetVernacularLanguages"> 
+        <label for="dropDown_FactSheetVernacularLanguages" style="width: 200px">FactSheet Vernacular Languages:</label> 
+        <div> 
+          <input id="dropDown_FactSheetVernacularLanguages" style="width: 150px"> 
+        </div> 
+      </div> 
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12" id="RPSVernacularLanguages"> 
+        <label for="dropDown_RPSVernacularLanguages" style="width: 200px">RPS Vernacular Languages:</label> 
+        <div> 
+          <input id="dropDown_RPSVernacularLanguages" style="width: 150px"> 
+        </div> 
+      </div> 
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12" id="BharatiAxaVernacularLanguages"> 
+        <label for="dropDown_BharatiAxaVernacularLanguages" style="width: 200px">Bharati Axa Vernacular Languages:</label> 
+        <div> 
+          <input id="dropDown_BharatiAxaVernacularLanguages" style="width: 150px"> 
+        </div> 
+      </div> 
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12" id="EdelweissVernacularLanguages"> 
+        <label for="dropDown_EdelweissVernacularLanguages" style="width: 200px">Edelweiss Vernacular Languages:</label> 
+        <div> 
+          <input id="dropDown_EdelweissVernacularLanguages" style="width: 150px"> 
+        </div> 
+      </div> 
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12" id="KOTEKVernacularLanguages"> 
+        <label for="dropDown_KOTEKVernacularLanguages">KOTAK Vernacular Languages:</label> 
+        <div> 
+          <input id="dropDown_KOTEKVernacularLanguages" style="width: 150px"> 
+        </div> 
+      </div> 
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12" id="KeyFactsStatementVernacularLanguages"> 
+        <label for="dropDown_KeyFactsVernacularLanguages" style="width: 200px">Key Facts Vernacular Languages:</label> 
+        <div> 
+          <input id="dropDown_KeyFactsVernacularLanguages" style="width: 150px"> 
+        </div> 
+      </div> 
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12" id="SanctionLetterVernacularLanguages"> 
+        <label for="dropDown_SanctionLetterVernacularLanguages" style="width:200px">Sanction Letter Language:</label> 
+        <div> 
+          <input id="dropDown_SanctionLetterVernacularLanguages" style="width:150px"> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+
+  <div id="documents_ReportsGrid"></div> 
+
+</div> 
+  <!--   select hm.hierarchy_name,center_name,cem.center_id,group_name,gm.group_id,customer_name, 
+  style="margin-left: 10px; margin-right: 10px; margin-bottom: 20px;" 
+customer_number,loan_number,loan_amount from customer_master cm 
+RIGHT JOIN loan_applications la ON la.customer_id = cm.customer_id and la.delete_flag=0 
+RIGHT JOIN hierarchy_master hm ON hm.hierarchy_id = cm.branch_id and hm.delete_flag=0 
+RIGHT JOIN group_master gm ON gm.branch_id = hm.hierarchy_id and gm.delete_flag=0 
+RIGHT JOIN center_master cem ON cem.center_id = gm.center_id and cem.delete_flag=0 
+RIGHT JOIN service_point_master spm ON spm.service_point_id = cem.service_point_id and spm.delete_flag=0 
+where hm.hierarchy_id='193' and gm.group_name='ASHA' --> 
+
+  <!-- select gm.group_name,gm.group_id,gm.branch_id from group_master gm,hierarchy_master hm where hm.hierarchy_id=gm.branch_id and hm.delete_flag=0 
+and gm.proposed_disbursement_date = '2018-03-23' and hm.hierarchy_id=193   --> 
+  <script> 
+    var states = []; 
+    var division = []; 
+    var region = []; 
+    var branch = []; 
+    var Route = []; 
+    var CensusVillage = []; 
+    var batch = []; 
+    var groups = []; 
+    var objState = null; 
+    var objGroup = null; 
+    var dropDownGroup = null; 
+    var objectDivision = null; 
+    var dropDownDivision = null; 
+    var dropDownState = null; 
+    var objectRegion = null; 
+    var dropDownRegion = null; 
+    var objectBranch = null; 
+    var objectRoute = null; 
+    var dropDownBranch = null; 
+    var dropDownRoute = null; 
+    var objectCensusVillage = null; 
+    var dropDownCensusVillage = null; 
+    var objectBatch = null; 
+    var dropDownBatch = null; 
+    var cbCustomersRecord = null; 
+    var cbCustomersGridData = []; 
+    var cbResponseSearchData = null; 
+    var hierarchyDetailsList = null; 
+    var allowRenewalClients = null; 
+    var loanApplications = []; 
+    var objLoanApplications = null; 
+    var gridLoanApplications = null; 
+    var documentType =[]; 
+    var dropDownDocumentType = null; 
+    var vernacularLanguages =[]; 
+    var dropDownVernacularLanguages = null; 
+    var jlgLoanAgreementvernacularLanguages =[]; 
+    var dropDownjlgLoanAgreementVernacularLanguages = null; 
+    var salaVernacularLanguages =[]; 
+    var dropDownsalaVernacularLanguages = null; 
+    var factSheetVernacularLanguages =[]; 
+    var dropDownFactSheetVernacularLanguages = null; 
+    var customerIds = []; 
+    var rpsVernacularLanguages =[]; 
+    var dropDownRPSVernacularLanguages = null; 
+    var bharatiAxaVernacularLanguages =[]; 
+    var dropDownbharatiAxaVernacularLanguages = []; 
+    var edelweissVernacularLanguages =[]; 
+    var dropDownEdelweissVernacularLanguages = null; 
+    var kotakVernacularLanguages =[]; 
+    var dropDownKOTAKVernacularLanguages = null; 
+    var keyFactsVernacularLanguages =[]; 
+    var dropDownKeyFactsVernacularLanguages = null; 
+    var sanctionLetterVernacularLanguages = []; 
+    var dropDownSanctionLetterVernacularLanguages = null; 
+
+    $(document).ready(function() { 
+ debugger; 
+ $("#VernacularLanguages").hide(); 
+ $("#JLGLoanAgreementVernacularLanguages").hide(); 
+ $("#SALAVernacularLanguages").hide(); 
+ $("#FactSheetVernacularLanguages").hide(); 
+ $("#RPSVernacularLanguages").hide(); 
+ $("#BharatiAxaVernacularLanguages").hide(); 
+ $("#EdelweissVernacularLanguages").hide(); 
+ $("#KOTEKVernacularLanguages").hide(); 
+ $("#KeyFactsStatementVernacularLanguages").hide(); 
+ $("#SanctionLetterVernacularLanguages").hide(); 
+              $("#button_Update").kendoButton(); 
+              $("#button_Cancel").kendoButton().click(function() { 
+                $("#divPlaceHolder").load("EmptyPage.html"); 
+              }); 
+              var drBranchId = getSessionValue("DEVIATION_REQUEST_BRANCH_ID"); 
+              if (selectedBranch != "") { 
+                pageLoad(); 
+              } else if (drBranchId != "" && drBranchId != null) { 
+                selectedBranch = drBranchId[0]["selectedBranch"]; 
+                selectedRoute = drBranchId[0]["selectedRoute"]; 
+                pageLoad(); 
+              } else { 
+                $("#div_PageLoad").hide(); 
+                alert("Please Select Branch From Product Selection"); 
+                $("#divPlaceHolder").load( 
+                    "ProductSelection.html"); 
+              } 
+
+              function pageLoad() { 
+debugger; 
+                //sessionStorage.removeItem("DEVIATION_REQUEST_BRANCH_ID"); 
+                if (menuStr == "DeviationRequest") { 
+                  sessionStorage 
+                      .removeItem("DEVIATION_REQUEST_SEARCH_DATA"); 
+                  sessionStorage 
+                      .removeItem("DEVIATION_REQUEST_CUS_DATA"); 
+                  menuStr = ""; 
+                } 
+
+                $("#dropDownList_State").kendoDropDownList({ 
+                  optionLabel : "--Select--", 
+                  dataTextField : "hierarchyName", 
+                  dataValueField : "hierarchyId", 
+                  change : onStateChange, 
+                  dataSource : [] 
+                }); 
+                $("#dropDownList_Division").kendoDropDownList({ 
+                  optionLabel : "--Select--", 
+                  dataTextField : "hierarchyName", 
+                  dataValueField : "hierarchyId", 
+                  change : onDivisionChange, 
+                  dataSource : [] 
+                }); 
+
+                $("#dropDownList_Region").kendoDropDownList({ 
+                  optionLabel : "--Select--", 
+                  dataTextField : "hierarchyName", 
+                  dataValueField : "hierarchyId", 
+                  change : onRegionChange, 
+                  dataSource : [] 
+                }); 
+                $("#dropDownList_Branch").kendoDropDownList({ 
+                  optionLabel : "--Select--", 
+                  dataTextField : "hierarchyName", 
+                  dataValueField : "hierarchyId", 
+                  //change:onBranchChange, 
+                  dataSource : [] 
+                }); 
+                $("#datePicker_AsOnDate").kendoDatePicker({ 
+                  change : onDateChange, 
+                  format : "yyyy-MM-dd", 
+                  /* max : new Date(), */ 
+
+                }); 
+                $("#datePicker_AsOnDate").val(kendo.toString(new Date(), "yyyy-MM-dd")); 
+                $("#datePicker_AsOnDate").attr('disabled','disabled'); 
+                //$("#datePicker_AsOnDate").data("kendoDatePicker").value(new Date()); 
+
+                $("#dropDown_Group").kendoDropDownList({ 
+                  optionLabel : "--Select--", 
+                  dataTextField : "groupName", 
+                  dataValueField : "groupId", 
+                  dataSource : [], 
+                  change : onGroupChange, 
+                }); 
+
+                $("#dropDown_DocumentType").kendoDropDownList({ 
+                  optionLabel : "--Select--", 
+                  dataTextField : "documentTypeText", 
+                  dataValueField : "documentTypeValue", 
+                  dataSource : [], 
+                  change : onDocumentTypeChange, 
+                }); 
+                $("#dropDown_VernacularLanguages").kendoDropDownList({ 
+                  //optionLabel : "--Select--", 
+                  dataTextField : "vernacularLanguages", 
+                  dataValueField : "vernacularLanguages", 
+                  dataSource : [] 
+                }); 
+                $("#dropDown_JLGLoanAgreementVernacularLanguages").kendoDropDownList({ 
+                  //optionLabel : "--Select--", 
+                  dataTextField : "vernacularLanguages", 
+                  dataValueField : "vernacularLanguages", 
+                  dataSource : [] 
+                }); 
+
+                $("#dropDown_SALAVernacularLanguages").kendoDropDownList({ 
+                  //optionLabel : "--Select--", 
+                  dataTextField : "vernacularLanguages", 
+                  dataValueField : "vernacularLanguages", 
+                  dataSource : [] 
+                }); 
+
+                $("#dropDown_FactSheetVernacularLanguages").kendoDropDownList({ 
+                  //optionLabel : "--Select--", 
+                  dataTextField : "vernacularLanguages", 
+                  dataValueField : "vernacularLanguages", 
+                  dataSource : [] 
+                }); 
+
+                $("#dropDown_RPSVernacularLanguages").kendoDropDownList({ 
+                  //optionLabel : "--Select--", 
+                  dataTextField : "vernacularLanguages", 
+                  dataValueField : "vernacularLanguages", 
+                  dataSource : [] 
+                }); 
+                $("#dropDown_BharatiAxaVernacularLanguages").kendoDropDownList({ 
+                  //optionLabel : "--Select--", 
+                  dataTextField : "vernacularLanguages", 
+                  dataValueField : "vernacularLanguages", 
+                  dataSource : [] 
+                }); 
+                $("#dropDown_EdelweissVernacularLanguages").kendoDropDownList({ 
+                  //optionLabel : "--Select--", 
+                  dataTextField : "vernacularLanguages", 
+                  dataValueField : "vernacularLanguages", 
+                  dataSource : [] 
+                }); 
+                $("#dropDown_KOTEKVernacularLanguages").kendoDropDownList({ 
+                  //optionLabel : "--Select--", 
+                  dataTextField : "vernacularLanguages", 
+                  dataValueField : "vernacularLanguages", 
+                  dataSource : [] 
+                }); 
+                $("#dropDown_KeyFactsVernacularLanguages").kendoDropDownList({ 
+                  //optionLabel : "--Select--", 
+                  dataTextField : "vernacularLanguages", 
+                  dataValueField : "vernacularLanguages", 
+                  dataSource : [] 
+                }); 
+                $("#dropDown_SanctionLetterVernacularLanguages").kendoDropDownList({ 
+                  dataTextField : "vernacularLanguages", 
+                  dataValueField : "vernacularLanguages", 
+                  dataSource : [] 
+                }); 
+
+                $("#documents_ReportsGrid") 
+                    .kendoGrid( 
+                        { 
+
+                          dataSource : [], 
+                          pageable : { 
+                            input : true, 
+                            pageSizes : true, 
+                            pageSize : 20, 
+                          }, 
+                          columns : [ 
+                              { 
+                                headerTemplate: "<input type='checkbox' id='update_checkBox_header' onclick='checkAll(this)'/>", 
+                                template : "<input type='checkbox' id='checkBox_chck' class='chkFormols' checked='checked'/>", 
+                                width : "40px" 
+                              }, 
+                              { 
+                                field : "referenceId", 
+                                title : "Center Name", 
+                                height : "10px;", 
+                                width : "100px" 
+                              }, 
+                              { 
+                                field : "centerId", 
+                                title : "Center ID", 
+                                height : "10px;", 
+                                width : "150px" 
+                              }, 
+                              { 
+                                field : "groupName", 
+                                title : "Group Name", 
+                                height : "10px;", 
+                                width : "100px" 
+                              }, 
+                              { 
+                                field : "groupNumber", 
+                                title : "Group ID", 
+                                height : "10px;", 
+                                width : "100px" 
+                              }, 
+                              { 
+                                field : "customerName", 
+                                title : "Customer Name", 
+                                height : "10px;", 
+                                width : "150px" 
+                              }, 
+                              { 
+                                field : "customerNumber", 
+                                title : "Customer Number", 
+                                height : "10px;", 
+                                width : "150px" 
+                              }, 
+                              { 
+                                field : "loanNumber", 
+                                title : "Loan Number", 
+                                height : "10px;", 
+                                width : "100px" 
+                              }, 
+                              { 
+                                field : "loanAmount", 
+                                title : "Loan Amount", 
+                                height : "10px;", 
+                                width : "100px" 
+                              }, 
+                              { 
+                                field : "insuranceName", 
+                                title : "Insurance Name", 
+                                height : "10px;", 
+                                width : "100px", 
+                              }, 
+                              { 
+                                field : "vendorName", 
+                                hidden : true, 
+
+                              }], 
+                        }); 
+debugger; 
+                getDataFromServer( 
+                    projectName 
+                        + "/rest/common_service/get_branch_hierarchy_details", 
+                    getRequestParamString(getRequestParamObject()), 
+                    "POST", 
+                    onHierarchyDetailsReceiveHandler, 
+                    errorHandler); 
+                var requestParam = getRequestParamObject(); 
+                requestParam.jsonFilterText = "{\"hierarchyType\":\"" 
+                    + aesEncryption("STATE") + "\"}"; 
+                getDataFromServer( 
+                    projectName 
+                        + "/rest/common_service/get_hierarchy_data", 
+                    getRequestParamString(requestParam), 
+                    "POST", onStateReceiveHandler, 
+                    errorHandler); 
+                onDateChange(); 
+                /* 
+                getDataFromServer(projectName 
+                    + "/rest/savings_loan_documents/get_savings_loan_document_type", 
+                    getRequestParamString(getRequestParamObject()), "POST", 
+                    onDocumentTypeReceiveHandler, errorHandler); */ 
+
+                var requestParamdocs = getRequestParamObject(); 
+                requestParamdocs.jsonFilterText = "{\"branchId\":\"" 
+                  + aesEncryption($("#dropDownList_Branch").data("kendoDropDownList").value()) + "\"}"; 
+                getDataFromServer(projectName 
+                    + "/rest/savings_loan_documents/get_savings_loan_document_type", 
+                    getRequestParamString(requestParamdocs), "POST", 
+                    onDocumentTypeReceiveHandler, errorHandler); 
+
+                var vernacularLanguagesRequestParam = getRequestParamObject(); 
+                vernacularLanguagesRequestParam.jsonFilterText = "{\"stateId\":\"" 
+                  + aesEncryption($("#dropDownList_State").data("kendoDropDownList").value()) + "\"}"; 
+
+                getDataFromServer(projectName 
+                    + "/rest/savings_loan_documents/get_vernacular_languages", 
+                    getRequestParamString(vernacularLanguagesRequestParam), "POST", 
+                    onVernacularLanguagesReceiveHandler, errorHandler); 
+
+                getDataFromServer(projectName 
+                    + "/rest/savings_loan_documents/get_jlg_loan_agreement_vernacular_languages", 
+                    getRequestParamString(vernacularLanguagesRequestParam), "POST", 
+                    onJLGLoanAgreementVernacularLanguagesReceiveHandler, errorHandler); 
+
+              getDataFromServer(projectName 
+                  + "/rest/savings_loan_documents/get_sa_la_vernacular_languages", 
+                  getRequestParamString(vernacularLanguagesRequestParam), "POST", 
+                  onsalaVernacularLanguagesReceiveHandler, errorHandler); 
+
+              getDataFromServer(projectName 
+                  + "/rest/savings_loan_documents/get_fact_sheet_vernacular_languages", 
+                  getRequestParamString(vernacularLanguagesRequestParam), "POST", 
+                  onFactSheetVernacularLanguagesReceiveHandler, errorHandler); 
+
+              getDataFromServer(projectName 
+                  + "/rest/savings_loan_documents/get_rps_vernacular_languages", 
+                  getRequestParamString(vernacularLanguagesRequestParam), "POST", 
+                  onRPSVernacularLanguagesReceiveHandler, errorHandler); 
+
+              getDataFromServer(projectName 
+                  + "/rest/savings_loan_documents/get_bharati_axa_vernacular_languages", 
+                  getRequestParamString(vernacularLanguagesRequestParam), "POST", 
+                  onBharatiAXAVernacularLanguagesReceiveHandler, errorHandler); 
+
+              getDataFromServer(projectName 
+                  + "/rest/savings_loan_documents/get_Edelweiss_vernacular_languages", 
+                  getRequestParamString(vernacularLanguagesRequestParam), "POST", 
+                  onEdelweissVernacularLanguagesReceiveHandler, errorHandler); 
+
+              debugger; 
+              getDataFromServer(projectName + "/rest/savings_loan_documents/get_kotak_Insurance_vernacular_languages", 
+                  getRequestParamString(vernacularLanguagesRequestParam), "POST", 
+                  onKOTAKInsuranceVernacularLanguagesReceiveHandler, errorHandler); 
+
+              getDataFromServer(projectName + "/rest/savings_loan_documents/get_key_facts_vernacular_languages", 
+                  getRequestParamString(vernacularLanguagesRequestParam), "POST", 
+                  onKeyFactsVernacularLanguagesReceiveHandler, errorHandler); 
+
+              getDataFromServer(projectName + "/rest/savings_loan_documents/get_sanction_letter_vernacular_languages", 
+                  getRequestParamString(vernacularLanguagesRequestParam),"POST", 
+                  onSanctionLetterVernacularLanguagesReceiveHandler, errorHandler); 
+
+   } 
+
+            }); 
+
+    function onHierarchyDetailsReceiveHandler(response) { 
+      debugger; 
+      var hierarchyDetails = null; 
+      hierarchyDetailsList = []; 
+      for (var i = 0; i < response.length; i++) { 
+        hierarchyDetails = new OrganizationHierarchyMasterDO(); 
+        hierarchyDetails.fromJson(response[i]); 
+        hierarchyDetailsList.push(hierarchyDetails); 
+      } 
+
+    } 
+    function onStateReceiveHandler(response) { 
+      debugger; 
+
+      states = []; 
+      for (var i = 0; i < response.length; i++) { 
+        objState = new OrganizationHierarchyMasterDO(); 
+        objState.fromJson(response[i]); 
+        states.push(objState); 
+      } 
+      dropDownState = $("#dropDownList_State").data("kendoDropDownList"); 
+      dropDownState.dataSource.data(states); 
+      dropDownState.refresh(); 
+      if (hierarchyDetailsList != null 
+          && hierarchyDetailsList != undefined) { 
+        $("#dropDownList_State").data("kendoDropDownList").value( 
+            hierarchyDetailsList[0]["stateId"]); 
+        $("#dropDownList_State").data("kendoDropDownList") 
+            .enable(false); 
+        onStateChange(); 
+      } 
+
+    } 
+
+    function onStateChange(e) { 
+debugger; 
+      var requestParam = getRequestParamObject(); 
+      if ($("#dropDownList_State").data("kendoDropDownList").value() == "") 
+        requestParam.jsonFilterText = "{\"parentHierarchyId\":\""+ aesEncryption($("#dropDownList_State").data("kendoDropDownList").value()) + "\",\"hierarchyType\":\"" + ""+ "\"}"; 
+      else 
+        requestParam.jsonFilterText = "{\"parentHierarchyId\":\""+ aesEncryption($("#dropDownList_State").data("kendoDropDownList").value()) + "\",\"hierarchyType\":\""+ aesEncryption("DIVISION") + "\"}"; 
+      getDataFromServer(projectName 
+          + "/rest/common_service/get_hierarchy_data", 
+          getRequestParamString(requestParam), "POST", 
+          onDivisionReceiveHandler, errorHandler); 
+    } 
+    function onDivisionReceiveHandler(response) { 
+debugger; 
+      division = []; 
+      for (var i = 0; i < response.length; i++) { 
+        objectDivision = new OrganizationHierarchyMasterDO(); 
+        objectDivision.fromJson(response[i]); 
+        division.push(objectDivision); 
+      } 
+      dropDownDivision = $("#dropDownList_Division").data( 
+          "kendoDropDownList"); 
+      dropDownDivision.dataSource.data(division); 
+      dropDownDivision.refresh(); 
+
+      if (cbResponseSearchData != null 
+          && cbResponseSearchData != undefined) { 
+        $("#dropDownList_Division").data("kendoDropDownList").value( 
+            cbResponseSearchData[0]["division"]); 
+        onDivisionChange(); 
+      } 
+      if (hierarchyDetailsList != null 
+          && hierarchyDetailsList != undefined) { 
+        $("#dropDownList_Division").data("kendoDropDownList").value( 
+            hierarchyDetailsList[0]["divisionId"]); 
+        $("#dropDownList_Division").data("kendoDropDownList").enable( 
+            false); 
+        onDivisionChange(); 
+      } 
+    } 
+    function onDivisionChange(e) { 
+debugger; 
+      var requestParam = getRequestParamObject(); 
+      requestParam.jsonFilterText = "{\"parentHierarchyId\":\""+ aesEncryption($("#dropDownList_Division").data("kendoDropDownList").value()) + "\",\"hierarchyType\":\"" + aesEncryption("REGION")+ "\"}"; 
+      getDataFromServer(projectName 
+          + "/rest/common_service/get_hierarchy_data", 
+          getRequestParamString(requestParam), "POST", 
+          onRegionReceiveHandler, errorHandler); 
+    } 
+
+    function onRegionReceiveHandler(response) { 
+ debugger; 
+      region = []; 
+      for (var i = 0; i < response.length; i++) { 
+        objectRegion = new OrganizationHierarchyMasterDO(); 
+        objectRegion.fromJson(response[i]); 
+        region.push(objectRegion); 
+      } 
+      dropDownRegion = $("#dropDownList_Region") 
+          .data("kendoDropDownList"); 
+      dropDownRegion.dataSource.data(region); 
+      dropDownRegion.refresh(); 
+
+      if (cbResponseSearchData != null 
+          && cbResponseSearchData != undefined) { 
+        $("#dropDownList_Region").data("kendoDropDownList").value( 
+            cbResponseSearchData[0]["region"]); 
+        onRegionChange(); 
+      } 
+      if (hierarchyDetailsList != null 
+          && hierarchyDetailsList != undefined) { 
+        $("#dropDownList_Region").data("kendoDropDownList").value( 
+            hierarchyDetailsList[0]["regionId"]); 
+        $("#dropDownList_Region").data("kendoDropDownList").enable( 
+            false); 
+        onRegionChange(); 
+      } 
+    } 
+
+    function onRegionChange(e) { 
+ debugger; 
+      var requestParam = getRequestParamObject(); 
+      requestParam.jsonFilterText = "{\"parentHierarchyId\":\""+ aesEncryption($("#dropDownList_Region").data("kendoDropDownList").value()) + "\",\"hierarchyType\":\"" + aesEncryption("BRANCH")+ "\"}"; 
+      getDataFromServer(projectName 
+          + "/rest/common_service/get_hierarchy_data", 
+          getRequestParamString(requestParam), "POST", 
+          onBranchReceiveHandler, errorHandler); 
+    } 
+
+    function onBranchReceiveHandler(response) { 
+
+      branch = []; 
+      for (var i = 0; i < response.length; i++) { 
+        objectBranch = new OrganizationHierarchyMasterDO(); 
+        objectBranch.fromJson(response[i]); 
+        branch.push(objectBranch); 
+      } 
+      dropDownBranch = $("#dropDownList_Branch") 
+          .data("kendoDropDownList"); 
+      dropDownBranch.dataSource.data(branch); 
+      dropDownBranch.refresh(); 
+
+      if (cbResponseSearchData != null 
+          && cbResponseSearchData != undefined) { 
+        $("#dropDownList_Branch").data("kendoDropDownList").value( 
+            cbResponseSearchData[0]["branch"]); 
+        onBranchChange(); 
+      } 
+      if (hierarchyDetailsList != null 
+          && hierarchyDetailsList != undefined) { 
+        $("#dropDownList_Branch").data("kendoDropDownList").value( 
+            hierarchyDetailsList[0]["branchId"]); 
+        $("#dropDownList_Branch").data("kendoDropDownList").enable( 
+            false); 
+        //  onBranchChange(); 
+      } 
+    } 
+
+    function onDateChange() { 
+      debugger; 
+      var requestParamGroups = getRequestParamObject(); 
+      var proposedDisbursedDate = $("#datePicker_AsOnDate").data( 
+          "kendoDatePicker").value(); 
+      //var toDate = $("#datePickerToDate").data("kendoDatePicker").value(); 
+      var proposedDate = kendo.toString(proposedDisbursedDate, 
+          "yyyy-MM-dd"); 
+      if(proposedDisbursedDate == null){ 
+        proposedDate =kendo.toString(new Date(), "yyyy-MM-dd"); 
+      } 
+      var route = selectedRoute; 
+      //alert(routeId); 
+      debugger; 
+      requestParamGroups.jsonFilterText = "{\"proposedDisbursementDate\":\""+ aesEncryption(proposedDate) + "\",\"routeId\":\"" + aesEncryption(route) + "\"}"; 
+      getDataFromServer(projectName 
+          + "/rest/group_master/get_integrated_groups_on_date_savings_docs", 
+          getRequestParamString(requestParamGroups), "POST", 
+          onGroupsReceiveHandler, errorHandler); 
+    } 
+
+    function onGroupsReceiveHandler(response) { 
+      groups = []; 
+      for (var i = 0; i < response.length; i++) { 
+        objGroup = new GroupMasterDO(); 
+        objGroup.fromJson(response[i]); 
+        groups.push(objGroup); 
+      } 
+      dropDownGroup = $("#dropDown_Group").data("kendoDropDownList"); 
+      dropDownGroup.dataSource.data(groups); 
+      dropDownGroup.refresh(); 
+    } 
+
+    function onGroupChange(e) { 
+      debugger; 
+      $("#dropDown_DocumentType").data("kendoDropDownList").select(0); 
+      onDocumentTypeChange(); 
+
+      var requestParam = getRequestParamObject(); 
+      var proposedDisbursedDate = $("#datePicker_AsOnDate").data("kendoDatePicker").value(); 
+
+      var proposedDate = kendo.toString(proposedDisbursedDate,"yyyy-MM-dd"); 
+
+      if(proposedDate == null){ 
+        proposedDate =kendo.toString(new Date(), "yyyy-MM-dd"); 
+      } 
+      requestParam.jsonFilterText = "{\"groupId\":\"" +aesEncryption($("#dropDown_Group").data("kendoDropDownList").value())+ "\",\"proposedDisbursementDate\":\"" + aesEncryption(proposedDate) + "\"}"; 
+
+      getDataFromServer(projectName + "/rest/loan_product_enrollment/get_loan_Documents_data", 
+          getRequestParamString(requestParam), "POST", 
+          onLoanApplicationsReceiveHandler, errorHandler); 
+    } 
+
+    function onLoanApplicationsReceiveHandler(response) { 
+      debugger; 
+      loanApplications = []; 
+      /* 
+       if (response.length==0) { 
+         alert("There is no customers are there to download the "+ $("#dropDown_DocumentType").data("kendoDropDownList").text() ); 
+       } */ 
+
+      for (var i = 0; i < response.length; i++) { 
+        objLoanApplications = new LoanProductEnrollmentDO(); 
+        objLoanApplications.fromJson(response[i]); 
+        loanApplications.push(objLoanApplications); 
+      } 
+      gridLoanApplications = $("#documents_ReportsGrid") 
+          .data("kendoGrid"); 
+      gridLoanApplications.dataSource.data(loanApplications); 
+      gridLoanApplications.refresh(); 
+    } 
+
+    function checkAll(ele) { 
+      debugger; 
+      var customer = $(ele).is(':checked'); 
+      var grid = $('#documents_ReportsGrid').data('kendoGrid'); 
+      if (customer == true) { 
+        $('.chkFormols').prop('checked', true); 
+      } else { 
+        $('.chkFormols').prop('checked', false); 
+      } 
+    }; 
+
+    function onGenarateClick() { 
+      debugger; 
+      if (validation()) { 
+      if(loanApplications.length >=1){ 
+      var servicePointName = loanApplications[0]["referenceId"]; 
+      var groupNumber1 = loanApplications[0]["groupNumber"]; 
+      var centerNumber1 = loanApplications[0]["centerId"]; 
+      var villageName1 = loanApplications[0]["villageName"]; 
+
+      var intrestRate = 0; 
+
+      var groupId = $("#dropDown_Group").data("kendoDropDownList").value(); 
+      var temp = []; 
+      var integrationStatus = ""; 
+      for(var i = 0;i<=groups.length;i++){ 
+        temp = groups[i]; 
+        if(temp["groupId"]==groupId){ 
+          integrationStatus = temp["integrationStatus"]; 
+          break; 
+        } 
+      } 
+
+      var docType = $("#dropDown_DocumentType").data("kendoDropDownList").value(); 
+      var hospicashDocType = $("#dropDown_DocumentType").data("kendoDropDownList").text(); 
+      var groupName = $("#dropDown_Group").data("kendoDropDownList").text(); 
+      var branchName = $("#dropDownList_Branch").data("kendoDropDownList").text(); 
+      var regionName = $("#dropDownList_Region").data("kendoDropDownList").text(); 
+      var stateName = $("#dropDownList_State").data("kendoDropDownList").text(); 
+      var branchId = $("#dropDownList_Branch").data("kendoDropDownList").value(); 
+     var asOnDate = kendo.toString($("#datePicker_AsOnDate").data("kendoDatePicker").value(), "dd/MM/yyyy"); 
+     var regionId = $("#dropDownList_Region").data("kendoDropDownList").value(); 
+     var factSheetDate = kendo.toString($("#datePicker_AsOnDate").data("kendoDatePicker").value(), "dd-MMM-yyyy"); 
+     if(asOnDate == null){ 
+        asOnDate =kendo.toString(new Date(), "dd/MM/yyyy"); 
+ factSheetDate =kendo.toString(new Date(), "dd-MMM-yyyy"); 
+      } 
+
+     var stateId = $("#dropDownList_State").data("kendoDropDownList").value(); 
+
+      var  customerId = ""; 
+      var  customerName = ""; 
+      var  loanamount = ""; 
+      var  gstAmount = 0; 
+      var  processingFee = 0; 
+
+        var requestParam = getRequestParamObject(); 
+
+        debugger; 
+        customerIds = []; 
+        var grid = $("#documents_ReportsGrid").data("kendoGrid"); 
+        var selectedCheckBox = $("input:checked", grid.tbody).closest("tr"); 
+        $.each(selectedCheckBox, function(id, gridRow) { 
+          var item = grid.dataItem(gridRow); 
+          customerIds.push(item["customerId"]); 
+          customerId +="'"+ item["customerId"] + "',"; 
+          //customerName +="'"+item["customerName"]+"',"; 
+
+        }); 
+
+        if(customerId!=""){ 
+
+        if (docType == "SL"){ 
+          debugger; 
+          var vcLanguages = 
+          $("#dropDown_SanctionLetterVernacularLanguages") 
+            .data("kendoDropDownList") 
+            .value(); 
+
+          var vcFontFile = "times"; 
+          var vcReportName = ""; 
+
+          for(var i = 0; i < sanctionLetterVernacularLanguages.length; i++) { 
+
+            if(vcLanguages == 
+              sanctionLetterVernacularLanguages[i]["vernacularLanguages"]) { 
+
+              vcFontFile = 
+                sanctionLetterVernacularLanguages[i]["vernacularFontFile"]; 
+
+              vcReportName = 
+                sanctionLetterVernacularLanguages[i]["vernacularReportName"]; 
+
+              break; 
+            } 
+          } 
+         /* requestParam.jsonFilterText ="{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"customerId\":\"" + customerId 
+          + "\",\"docType\":\"" + docType + "\",\"servicePointName\":\"" + servicePointName 
+          + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"groupNumber1\":\"" + groupNumber1 + "\",\"centerNumber1\":\"" + centerNumber1 + "\",\"regionId\":\"" + regionId + "\"}"; 
+        getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_sanction_letter1",getRequestParamString(requestParam), "POST",onSanctionFormDataHandler, errorHandler); 
+         */ requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"groupName\":\"" + aesEncryption(groupName) 
+        + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+        + aesEncryption(stateName) + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"customerId\":\"" + aesEncryption(customerId) 
+        + "\",\"docType\":\"" + aesEncryption(docType) + "\",\"servicePointName\":\"" + aesEncryption(servicePointName) 
+        + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"groupNumber1\":\"" + aesEncryption(groupNumber1) + "\",\"centerNumber1\":\"" + aesEncryption(centerNumber1) + "\",\"regionId\":\"" + aesEncryption(regionId) 
++ "\",\"vcFontFile\":\"" + aesEncryption(vcFontFile) 
++ "\",\"vcReportName\":\"" + aesEncryption(vcReportName) 
++ "\",\"vcLanguages\":\"" + aesEncryption(vcLanguages) 
++ "\"}"; 
+      getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_sanction_letter1",getRequestParamString(requestParam), "POST",onSanctionFormDataHandler, errorHandler); 
+
+        }       
+        else if(docType == "SA"){ 
+          debugger; 
+          requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName + "\",\"branchName\":\"" 
+            + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" + stateName + "\",\"stateId\":\"" + stateId 
+            + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType + "\",\"customerId\":\"" 
+            + customerId + "\",\"servicePointName\":\"" + servicePointName + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\"}"; 
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_schedule",getRequestParamString(requestParam), "POST",onSanctionFormDataHandler, errorHandler); 
+        } 
+        else if(docType == "ANXR"){ 
+          debugger; 
+          var groupNumber = loanApplications[0]["groupNumber"]; 
+
+          $.each(selectedCheckBox, function(id, gridRow) { 
+            var item = grid.dataItem(gridRow); 
+            gstAmount += parseInt(item["gstAmount"]); 
+            processingFee += parseInt(item["processingFee"]); 
+          }); 
+
+          /* 
+          requestParam.jsonFilterText = "{\"groupNumber\":\"" + groupNumber + "\",\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"servicePointName\":\"" + servicePointName + "\",\"processingFee\":\"" 
+          + (parseInt(gstAmount) + parseInt(processingFee)) + "\",\"stateId\":\"" + stateId + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"villageName1\":\"" + villageName1 + "\"}"; 
+           */ 
+
+           requestParam.jsonFilterText = "{\"groupNumber\":\"" + aesEncryption(groupNumber) + "\",\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"groupName\":\"" + aesEncryption(groupName) 
+            + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+            + aesEncryption(stateName) + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) 
+            + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",\"servicePointName\":\"" + aesEncryption(servicePointName) + "\",\"processingFee\":\"" 
+            + (parseInt(gstAmount) + parseInt(processingFee)) + "\",\"stateId\":\"" + aesEncryption(stateId) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"villageName1\":\"" + aesEncryption(villageName1) + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_annexure_data",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+        } 
+        else if(docType == "RPS"){ 
+          debugger; 
+
+          var hosturl = window.location.href; 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+          var vcLanguages = $("#dropDown_RPSVernacularLanguages").data("kendoDropDownList").value(); 
+
+            for(var i=0;i<rpsVernacularLanguages.length;i++){ 
+           if(vcLanguages == rpsVernacularLanguages[i]["vernacularLanguages"]){ 
+           var  vcFontFile = rpsVernacularLanguages[i]["vernacularFontFile"]; 
+           var  vcReportName = rpsVernacularLanguages[i]["vernacularReportName"]; 
+           }   
+         } 
+             if(vcFontFile == null){ 
+              vcFontFile = "times"; 
+            } 
+
+          requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"servicePointName\":\"" + servicePointName + "\",\"hostURL\":\"" + hosturl+projectName + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\" ,\"vcFontFile\":\"" + vcFontFile + "\",\"vcReportName\":\"" + vcReportName + "\",\"vcLanguages\":\"" + vcLanguages + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_loan_documents_rps",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+        } 
+
+ else if(docType == "SAD"){ 
+
+          /* var contenturl = window.location.href; 
+          contenturl = contenturl.substring(0, contenturl.lastIndexOf("/") + 1) */ 
+          var hosturl = window.location.href; 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+          requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"servicePointName\":\"" + servicePointName + "\",\"hostURL\":\"" + hosturl+projectName + "\",\"version\":\"" + reportsVersion +"" 
+          + "\",\"integrationStatus\":\"" + integrationStatus + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_loan_documents_sad",getRequestParamString(requestParam), "POST",onSanctionFormDataHandler, errorHandler); 
+        } 
+
+        else if(docType == "DPN"){ 
+           var groupNumber = loanApplications[0]["groupNumber"]; 
+
+          /* requestParam.jsonFilterText = "{\"groupNumber\":\"" + groupNumber + "\",\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"loanAmount\":\"" + loanamount 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\"}"; 
+           */ 
+           requestParam.jsonFilterText = "{\"groupNumber\":\"" + aesEncryption(groupNumber) + "\",\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"loanAmount\":\"" + aesEncryption(loanamount) 
+            + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+            + aesEncryption(stateName) + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) 
+            + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_demondpromissory_note_data",getRequestParamString(requestParam), "POST",onSanctionFormDataHandler, errorHandler); 
+        } 
+        else if(docType == "LUC"){ 
+          debugger; 
+           var hosturl = window.location.href; 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+          // requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"hostURL\":\"" + hosturl+projectName + "\", \"proposedDisbursementDate\":\"" + asOnDate + "\",\"customerId\":\"" + customerId + "\",}"; 
+
+          requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\", \"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_loan_utilization_check_form_data",getRequestParamString(requestParam), "POST",onSanctionFormDataHandler, errorHandler); 
+        } 
+        else if(docType == "DBT"){     
+          debugger; 
+           var hosturl = window.location.href; 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+          requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"customerId\":\"" + customerId + "\",\"hostURL\":\"" + hosturl+projectName + "\",\"branchName\":\"" + branchName + "\",}"; 
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_dbt_form_data",getRequestParamString(requestParam), "POST",onSanctionFormDataHandler, errorHandler); 
+        } 
+        else if(docType == "SAD"){ 
+          $("#divPlaceHolder").load("SavingsAccountDeclaration.html"); 
+        } 
+        else if(docType == "RD"){ 
+          var hosturl = window.location.href; 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+           var groupNumber = loanApplications[0]["groupNumber"]; 
+
+           /* requestParam.jsonFilterText = "{\"groupNumber\":\"" + groupNumber + "\",\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"loanAmount\":\"" + loanamount 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"hostURL\":\"" + hosturl+projectName + "\",\"groupName\":\"" + groupName + "\",}"; 
+           */ 
+           requestParam.jsonFilterText = "{\"groupNumber\":\"" + aesEncryption(groupNumber) + "\",\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"loanAmount\":\"" + aesEncryption(loanamount) 
+            + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+            + aesEncryption(stateName) + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) 
+            + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"groupName\":\"" + aesEncryption(groupName) + "\",}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_rd_consent_letter",getRequestParamString(requestParam), "POST",onSanctionFormDataHandler, errorHandler); 
+        } 
+        else if(docType == "JLG New"){ 
+          debugger; 
+          var vcLanguages = $("#dropDown_VernacularLanguages").data("kendoDropDownList").value(); 
+
+          for(var i=0;i<vernacularLanguages.length;i++){ 
+         if(vcLanguages == vernacularLanguages[i]["vernacularLanguages"]){ 
+         var  vcFontFile = vernacularLanguages[i]["vernacularFontFile"]; 
+         var  vcReportName = vernacularLanguages[i]["vernacularReportName"]; 
+         }   
+       } 
+           if(vcFontFile == null){ 
+            vcFontFile = "times"; 
+          } 
+           var groupNumber = loanApplications[0]["groupNumber"]; 
+
+           /* requestParam.jsonFilterText = "{\"groupNumber\":\"" + groupNumber + "\",\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"loanAmount\":\"" + loanamount 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"vcFontFile\":\"" + vcFontFile + "\",\"vcReportName\":\"" + vcReportName + "\",\"vcLanguages\":\"" + vcLanguages + "\"}"; 
+           */ 
+
+           requestParam.jsonFilterText = "{\"groupNumber\":\"" + aesEncryption(groupNumber) + "\",\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"loanAmount\":\"" + aesEncryption(loanamount) 
+            + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+            + aesEncryption(stateName) + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) 
+            + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"vcFontFile\":\"" + aesEncryption(vcFontFile) + "\",\"vcReportName\":\"" + aesEncryption(vcReportName) + "\",\"vcLanguages\":\"" + aesEncryption(vcLanguages) + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_vernacular_declaration",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+        } 
+
+        else if(docType.toUpperCase().includes("KOTAK")){ 
+          debugger;         
+
+          var vcLanguages = $("#dropDown_KOTEKVernacularLanguages").data("kendoDropDownList").value(); 
+
+          for(var i=0;i<kotakVernacularLanguages.length;i++){ 
+         if(vcLanguages == kotakVernacularLanguages[i]["vernacularLanguages"]){ 
+         var  vcFontFile = kotakVernacularLanguages[i]["vernacularFontFile"]; 
+         var  vcReportName = kotakVernacularLanguages[i]["vernacularReportName"]; 
+         }   
+       } 
+
+          if(vcFontFile == null){ 
+            vcFontFile = "times"; 
+          } 
+           var hosturl = window.location.href; 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+           var groupNumber = loanApplications[0]["groupNumber"]; 
+
+           /* requestParam.jsonFilterText = "{\"groupNumber\":\"" + groupNumber + "\",\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"loanAmount\":\"" + loanamount 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"hostURL\":\"" + hosturl+projectName + "\"}"; 
+           */requestParam.jsonFilterText = "{\"groupNumber\":\"" + aesEncryption(groupNumber) + "\",\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"loanAmount\":\"" + aesEncryption(loanamount) 
+            + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+            + aesEncryption(stateName) + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) 
+            + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"vcReportName\":\"" + aesEncryption(vcReportName) + "\",\"vcLanguages\":\"" + aesEncryption(vcLanguages) + "\",\"vcFontFile\":\"" + aesEncryption(vcFontFile) + "\"}"; 
+
+        /* Added new condition for insurance document validation at customer level */ 
+          var value = false; 
+          var selectedInsuranceDocumentName = $("#dropDown_DocumentType").data("kendoDropDownList").value(); 
+
+          outer : for(var j = 0 ;j<customerIds.length;j++){ 
+            var tempCustId = customerIds[j]; 
+             for(var i = 0 ;i<loanApplications.length;i++){ 
+              if(tempCustId==loanApplications [i]["customerId"]){ 
+                var  itemName = loanApplications [i]["insuranceName"]; 
+                if(itemName == selectedInsuranceDocumentName){ 
+                  value = true; 
+                } 
+                else{ 
+                  value = false; 
+                  break outer; 
+                } 
+              } 
+            } 
+
+          } 
+
+          if(value == true){ 
+            getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_kotak_insurance_form",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+       }else{ 
+         alert("Some customers are not belongs to " + selectedInsuranceDocumentName + ". Please download the form with proper insurance document ."); 
+      } 
+      } 
+
+        else if(docType == "DBT New"){     
+          debugger; 
+         var groupNumber = loanApplications[0]["groupNumber"]; 
+
+        /*   requestParam.jsonFilterText = "{\"groupNumber\":\"" + groupNumber + "\",\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"loanAmount\":\"" + loanamount 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"regionId\":\"" + regionId + "\"}"; 
+         */ 
+         requestParam.jsonFilterText = "{\"groupNumber\":\"" + aesEncryption(groupNumber) + "\",\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"loanAmount\":\"" + aesEncryption(loanamount) 
+          + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+          + aesEncryption(stateName) + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) 
+          + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"regionId\":\"" + aesEncryption(regionId) + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_dbt_form_data_new",getRequestParamString(requestParam), "POST",onSanctionFormDataHandler, errorHandler); 
+
+        } 
+        else if(docType == "SA New"){ 
+          debugger; 
+           var hosturl = window.location.href; 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+        /*   requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName + "\",\"branchName\":\"" 
+            + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" + stateName + "\",\"stateId\":\"" + stateId 
+            + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType + "\",\"customerId\":\"" 
+            + customerId + "\",\"servicePointName\":\"" + servicePointName + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"hostURL\":\"" + hosturl+projectName + "\",\"groupNumber1\":\"" + groupNumber1 + "\",\"centerNumber1\":\"" + centerNumber1 + "\",\"regionId\":\"" + regionId + "\"}"; 
+         */ 
+         requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"groupName\":\"" + aesEncryption(groupName) + "\",\"branchName\":\"" 
+          + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" + aesEncryption(stateName) + "\",\"stateId\":\"" + aesEncryption(stateId) 
+          + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) + "\",\"customerId\":\"" 
+          + aesEncryption(customerId) + "\",\"servicePointName\":\"" + aesEncryption(servicePointName) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"groupNumber1\":\"" + aesEncryption(groupNumber1) + "\",\"centerNumber1\":\"" + aesEncryption(centerNumber1) + "\",\"regionId\":\"" + aesEncryption(regionId) + "\"}"; 
+
+        getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_schedule_new",getRequestParamString(requestParam), "POST",onSanctionFormDataHandler, errorHandler); 
+        } 
+
+        else if(docType.toUpperCase().includes("EDELWEISS")){ 
+          debugger; 
+
+           var hosturl = window.location.href; 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+            var vcLanguages = $("#dropDown_EdelweissVernacularLanguages").data("kendoDropDownList").value(); 
+
+            for(var i=0;i<edelweissVernacularLanguages.length;i++){ 
+           if(vcLanguages == edelweissVernacularLanguages[i]["vernacularLanguages"]){ 
+           var  vcFontFile = edelweissVernacularLanguages[i]["vernacularFontFile"]; 
+           var  vcReportName = edelweissVernacularLanguages[i]["vernacularReportName"]; 
+           }   
+         } 
+             if(vcFontFile == null){ 
+              vcFontFile = "times"; 
+            } 
+
+        /*   requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName + "\",\"branchName\":\"" 
+            + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" + stateName + "\",\"stateId\":\"" + stateId 
+            + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType + "\",\"customerId\":\"" 
+            + customerId + "\",\"servicePointName\":\"" + servicePointName + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"hostURL\":\"" + hosturl+projectName + "\"}"; 
+           */ 
+
+           requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"groupName\":\"" + aesEncryption(groupName) + "\",\"branchName\":\"" 
+            + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" + aesEncryption(stateName) + "\",\"stateId\":\"" + aesEncryption(stateId) 
+            + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) + "\",\"customerId\":\"" 
+            + aesEncryption(customerId) + "\",\"servicePointName\":\"" + aesEncryption(servicePointName) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) +"\",\"vcReportName\":\"" + aesEncryption(vcReportName) + "\",\"vcLanguages\":\"" + aesEncryption(vcLanguages) +"\",\"vcFontFile\":\"" + aesEncryption(vcFontFile) + "\"}"; 
+
+         /* Added new condition for insurance document validation at customer level */ 
+          var value = false; 
+          var selectedInsuranceDocumentName = $("#dropDown_DocumentType").data("kendoDropDownList").value(); 
+
+          outer : for(var j = 0 ;j<customerIds.length;j++){ 
+            var tempCustId = customerIds[j]; 
+             for(var i = 0 ;i<loanApplications.length;i++){ 
+              if(tempCustId==loanApplications [i]["customerId"]){ 
+                var  itemName = loanApplications [i]["insuranceName"]; 
+                if(itemName == selectedInsuranceDocumentName){ 
+                  value = true; 
+                } 
+                else{ 
+                  value = false; 
+                  break outer; 
+                } 
+              } 
+            } 
+
+          } 
+
+          if(value == true){ 
+            getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_member_declaration_form",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+       }else{ 
+         alert("Some customers are not belongs to " + selectedInsuranceDocumentName + ". Please download the form with proper insurance document ."); 
+      } 
+      } 
+
+        /* else if(docType == "JLG"){ 
+          debugger; 
+           var hosturl = window.location.href; 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+          requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName + "\",\"branchName\":\"" 
+            + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" + stateName + "\",\"stateId\":\"" + stateId 
+            + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType + "\",\"customerId\":\"" 
+            + customerId + "\",\"servicePointName\":\"" + servicePointName + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"hostURL\":\"" + hosturl+projectName + "\"}"; 
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_jlg_loan_agreement",getRequestParamString(requestParam), "POST",onSanctionFormDataHandler, errorHandler); 
+        } */ 
+
+        else if(docType == "JLG"){ 
+          debugger; 
+          var hosturl = window.location.href; 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+          var vcLanguages = $("#dropDown_JLGLoanAgreementVernacularLanguages").data("kendoDropDownList").value(); 
+
+          for(var i=0;i<jlgLoanAgreementvernacularLanguages.length;i++){ 
+         if(vcLanguages == jlgLoanAgreementvernacularLanguages[i]["vernacularLanguages"]){ 
+         var  vcFontFile = jlgLoanAgreementvernacularLanguages[i]["vernacularFontFile"]; 
+         var  vcReportName = jlgLoanAgreementvernacularLanguages[i]["vernacularReportName"]; 
+         }   
+       } 
+           if(vcFontFile == null){ 
+            vcFontFile = "times"; 
+          } 
+           var groupNumber = loanApplications[0]["groupNumber"]; 
+          /* requestParam.jsonFilterText = "{\"groupNumber\":\"" + groupNumber + "\",\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"loanAmount\":\"" + loanamount 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"vcFontFile\":\"" + vcFontFile + "\",\"vcReportName\":\"" + vcReportName + "\",\"vcLanguages\":\"" + vcLanguages + "\",\"hostURL\":\"" + hosturl+projectName + "\"}"; 
+         */ 
+
+         requestParam.jsonFilterText = "{\"groupNumber\":\"" + aesEncryption(groupNumber) + "\",\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"loanAmount\":\"" + aesEncryption(loanamount) 
+          + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+          + aesEncryption(stateName) + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) 
+          + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"vcFontFile\":\"" + aesEncryption(vcFontFile) + "\",\"vcReportName\":\"" + aesEncryption(vcReportName) + "\",\"vcLanguages\":\"" + aesEncryption(vcLanguages) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_jlg_loan_agreement",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+        } 
+
+        else if(docType == "SA_LA"){ 
+          debugger; 
+          var hosturl = window.location.href; 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+          var vcLanguages = $("#dropDown_SALAVernacularLanguages").data("kendoDropDownList").value(); 
+
+          for(var i=0;i<salaVernacularLanguages.length;i++){ 
+         if(vcLanguages == salaVernacularLanguages[i]["vernacularLanguages"]){ 
+         var  vcFontFile = salaVernacularLanguages[i]["vernacularFontFile"]; 
+         var  vcReportName = salaVernacularLanguages[i]["vernacularReportName"]; 
+         }   
+       } 
+           /* if(vcFontFile == null){ 
+            vcFontFile = "times"; 
+          } */ 
+           var groupNumber = loanApplications[0]["groupNumber"]; 
+
+          /* requestParam.jsonFilterText = "{\"groupNumber\":\"" + groupNumber + "\",\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"loanAmount\":\"" + loanamount 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"version\":\"" + reportsVersion + " (API)" 
+          + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"vcFontFile\":\"" + vcFontFile + "\",\"vcReportName\":\"" + vcReportName + "\",\"vcLanguages\":\"" + vcLanguages + "\",\"hostURL\":\"" + hosturl+projectName + "\"}"; 
+           */ 
+           requestParam.jsonFilterText = "{\"groupNumber\":\"" + aesEncryption(groupNumber) + "\",\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"loanAmount\":\"" + aesEncryption(loanamount) 
+            + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+            + aesEncryption(stateName) + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) 
+            + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "" 
+            + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"vcFontFile\":\"" + aesEncryption(vcFontFile) + "\",\"vcReportName\":\"" + aesEncryption(vcReportName) + "\",\"vcLanguages\":\"" + aesEncryption(vcLanguages) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_sa_la_vernacular_loan_documents",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+        } 
+        else if(docType.toUpperCase().includes("BHARATI AXA")){ 
+          debugger; 
+           var hosturl = window.location.href; 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+          var vcLanguages = $("#dropDown_BharatiAxaVernacularLanguages").data("kendoDropDownList").value(); 
+
+            for(var i=0;i<bharatiAxaVernacularLanguages.length;i++){ 
+           if(vcLanguages == bharatiAxaVernacularLanguages[i]["vernacularLanguages"]){ 
+           var  vcFontFile = bharatiAxaVernacularLanguages[i]["vernacularFontFile"]; 
+           var  vcReportName = bharatiAxaVernacularLanguages[i]["vernacularReportName"]; 
+           }   
+         } 
+             if(vcFontFile == null){ 
+              vcFontFile = "times"; 
+            } 
+
+          /* requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName + "\",\"branchName\":\"" 
+            + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" + stateName + "\",\"stateId\":\"" + stateId 
+            + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType + "\",\"customerId\":\"" 
+            + customerId + "\",\"servicePointName\":\"" + servicePointName + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"hostURL\":\"" + hosturl+projectName + "\"}"; 
+           */ 
+
+           requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"groupName\":\"" + aesEncryption(groupName) + "\",\"branchName\":\"" 
+            + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" + aesEncryption(stateName) + "\",\"stateId\":\"" + aesEncryption(stateId) 
+            + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) + "\",\"customerId\":\"" 
+            + aesEncryption(customerId) + "\",\"servicePointName\":\"" + aesEncryption(servicePointName) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) 
+            + "\",\"vcFontFile\":\"" + aesEncryption(vcFontFile) + "\",\"vcReportName\":\"" + aesEncryption(vcReportName) + "\",\"vcLanguages\":\"" + aesEncryption(vcLanguages) + "\"}"; 
+
+            var groupNumber = loanApplications[0]["groupNumber"]; 
+            /* Added new condition for insurance document validation at customer level */ 
+            /* var value = false; 
+            var selectedInsuranceDocumentName = $("#dropDown_DocumentType").data("kendoDropDownList").text(); 
+
+            outer : for(var j = 0 ;j<customerIds.length;j++){ 
+              var tempCustId = customerIds[j]; 
+               for(var i = 0 ;i<loanApplications.length;i++){ 
+                if(tempCustId==loanApplications [i]["customerId"]){ 
+                  var  itemName = loanApplications [i]["insuranceName"]; 
+                  if(itemName == selectedInsuranceDocumentName){ 
+                    value = true; 
+                  } 
+                  else{ 
+                    value = false; 
+                    break outer; 
+                  } 
+                } 
+              } 
+
+            } 
+
+            if(value == true){ */ 
+ getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_bharati_axa_insurance_form",
