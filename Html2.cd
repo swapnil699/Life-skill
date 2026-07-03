@@ -1,0 +1,874 @@
+getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+         //}else{ 
+           // alert("Some customers are not belongs to " + selectedInsuranceDocumentName + ". Please download the form with proper insurance document ."); 
+        //} 
+        } 
+        else if(docType == "FACTSHEET"){ 
+          debugger; 
+          var hosturl = window.location.href; 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+          var vcLanguages = $("#dropDown_FactSheetVernacularLanguages").data("kendoDropDownList").value(); 
+
+          for(var i=0;i<factSheetVernacularLanguages .length;i++){ 
+         if(vcLanguages == factSheetVernacularLanguages [i]["vernacularLanguages"]){ 
+         var  vcFontFile = factSheetVernacularLanguages [i]["vernacularFontFile"]; 
+         var  vcReportName = factSheetVernacularLanguages [i]["vernacularReportName"]; 
+         }   
+       } 
+           if(vcFontFile == null){ 
+            vcFontFile = "times"; 
+          } 
+           var groupNumber = loanApplications[0]["groupNumber"]; 
+
+          /* requestParam.jsonFilterText = "{\"groupNumber\":\"" + groupNumber + "\",\"groupId\":\"" + groupId + "\",\"groupName\":\"" + groupName + "\",\"branchId\":\"" + branchId + "\",\"loanAmount\":\"" + loanamount 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"version\":\"" + reportsVersion + " (API)" 
+          + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"vcFontFile\":\"" + vcFontFile + "\",\"vcReportName\":\"" + vcReportName + "\",\"vcLanguages\":\"" + vcLanguages + "\",\"hostURL\":\"" + hosturl+projectName + "\",\"regionId\":\"" + regionId + "\",\"factSheetDate\":\"" + factSheetDate + "\"}"; 
+           */ 
+
+           requestParam.jsonFilterText = "{\"groupNumber\":\"" + aesEncryption(groupNumber) + "\",\"groupId\":\"" + aesEncryption(groupId) + "\",\"groupName\":\"" + aesEncryption(groupName) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"loanAmount\":\"" + aesEncryption(loanamount) 
+            + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+            + stateName + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + docType 
+            + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "" 
+            + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"vcFontFile\":\"" + aesEncryption(vcFontFile) + "\",\"vcReportName\":\"" + aesEncryption(vcReportName) + "\",\"vcLanguages\":\"" + aesEncryption(vcLanguages) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"regionId\":\"" + aesEncryption(regionId) + "\",\"factSheetDate\":\"" + aesEncryption(factSheetDate) + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_fact_sheet_vernacular_loan_documents",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+        } 
+
+        else if(docType == "FORM NO 60"){ 
+          debugger; 
+          var divisionName = $("#dropDownList_Division").data("kendoDropDownList").text(); 
+
+          /* requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"servicePointName\":\"" + servicePointName + "\",\"hostURL\":\"" + hosturl+projectName + "\",\"version\":\"" + reportsVersion +" (API)" 
+          + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"divisionName\":\"" + divisionName + "\" }"; 
+           */ 
+
+           requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + aesEncryption(groupName) 
+            + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+            + aesEncryption(stateName) + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) 
+            + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",\"servicePointName\":\"" + aesEncryption(servicePointName) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"version\":\"" + aesEncryption(reportsVersion) +"" 
+            + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"divisionName\":\"" + aesEncryption(divisionName) + "\" }"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_form_60_loan_documents",getRequestParamString(requestParam), "POST",onSanctionFormDataHandler, errorHandler); 
+        } 
+
+        else if(docType == "Form_97"){ 
+          debugger; 
+          var divisionName = $("#dropDownList_Division").data("kendoDropDownList").text(); 
+          var hosturl = window.location.href; 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+          /* requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"servicePointName\":\"" + servicePointName + "\",\"hostURL\":\"" + hosturl+projectName + "\",\"version\":\"" + reportsVersion +" (API)" 
+          + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"divisionName\":\"" + divisionName + "\" }"; 
+           */ 
+
+           requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + aesEncryption(groupName) 
+            + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+            + aesEncryption(stateName) + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) 
+            + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",\"servicePointName\":\"" + aesEncryption(servicePointName) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"version\":\"" + aesEncryption(reportsVersion) +"" 
+            + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"divisionName\":\"" + aesEncryption(divisionName) + "\" }"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_form_97_loan_documents",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+        } 
+
+        else if(hospicashDocType.toUpperCase().includes("CARE")){ 
+          debugger; 
+           var hosturl = window.location.href; 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+          /* requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName + "\",\"branchName\":\"" 
+            + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" + stateName + "\",\"stateId\":\"" + stateId 
+            + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType + "\",\"customerId\":\"" 
+            + customerId + "\",\"servicePointName\":\"" + servicePointName + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"hostURL\":\"" + hosturl+projectName + "\",\"groupNumber1\":\"" + groupNumber1 + "\",\"centerNumber1\":\"" + centerNumber1 + "\",\"regionId\":\"" + regionId + "\"}"; 
+           */ 
+
+           requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName + "\",\"branchName\":\"" 
+            + aesEncryption(branchName) + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" + stateName + "\",\"stateId\":\"" + stateId 
+            + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + docType + "\",\"customerId\":\"" 
+            + aesEncryption(customerId) + "\",\"servicePointName\":\"" + servicePointName + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"groupNumber1\":\"" + groupNumber1 + "\",\"centerNumber1\":\"" + centerNumber1 + "\",\"regionId\":\"" + regionId + "\"}"; 
+
+        getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_hospicash_form_care",getRequestParamString(requestParam), "POST",onSanctionFormDataHandler, errorHandler); 
+        } 
+
+        else if(hospicashDocType.toUpperCase().includes("ICICI")){ 
+          debugger; 
+           var hosturl = window.location.href; 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+        /*   requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName + "\",\"branchName\":\"" 
+            + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" + stateName + "\",\"stateId\":\"" + stateId 
+            + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType + "\",\"customerId\":\"" 
+            + customerId + "\",\"servicePointName\":\"" + servicePointName + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"hostURL\":\"" + hosturl+projectName + "\",\"groupNumber1\":\"" + groupNumber1 + "\",\"centerNumber1\":\"" + centerNumber1 + "\",\"regionId\":\"" + regionId + "\"}"; 
+         */ 
+
+          requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName + "\",\"branchName\":\"" 
+          + aesEncryption(branchName) + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" + stateName + "\",\"stateId\":\"" + stateId 
+          + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + docType + "\",\"customerId\":\"" 
+          + aesEncryption(customerId) + "\",\"servicePointName\":\"" + servicePointName + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"groupNumber1\":\"" + groupNumber1 + "\",\"centerNumber1\":\"" + centerNumber1 + "\",\"regionId\":\"" + regionId + "\"}"; 
+
+        getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_hospicash_form_icici",getRequestParamString(requestParam), "POST",onSanctionFormDataHandler, errorHandler); 
+        } 
+
+        else if(docType == "MTL_Covering"){ 
+          debugger; 
+
+          var hosturl = window.location.href; 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+          /* requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"servicePointName\":\"" + servicePointName + "\",\"hostURL\":\"" + hosturl+projectName + "\",\"version\":\"" + reportsVersion +" (API)" 
+          + "\",\"integrationStatus\":\"" + integrationStatus + "\"}"; */ 
+
+          requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"groupName\":\"" + aesEncryption(groupName) 
+          + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+          + aesEncryption(stateName) + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) 
+          + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",\"servicePointName\":\"" + aesEncryption(servicePointName) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"version\":\"" + aesEncryption(reportsVersion) +"" 
+          + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_MTL_covering_top_sheet",getRequestParamString(requestParam), "POST",onSanctionFormDataHandler, errorHandler); 
+        } 
+
+        else if(docType == "PSL_DECLARATION"){ 
+          debugger; 
+
+          var hosturl = window.location.href; 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+          /* requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"hostURL\":\"" + hosturl+projectName + "\",\"version\":\"" + reportsVersion +" (API)" 
+          + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"groupNumber1\":\"" + groupNumber1 + "\",\"villageName1\":\"" + villageName1 + "\"}"; 
+           */ 
+
+           requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + aesEncryption(groupName) 
+            + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+            + stateName + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + docType 
+            + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"version\":\"" + reportsVersion +"" 
+            + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"groupNumber1\":\"" + aesEncryption(groupNumber1) + "\",\"villageName1\":\"" + aesEncryption(villageName1) + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_PSL_declaration_form",getRequestParamString(requestParam), "POST",onPSLDeclarationFormDataHandler, errorHandler); 
+        } 
+
+        else if(docType == "RPS_NEW"){ 
+          debugger; 
+
+          var hosturl = window.location.href; 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+        hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+          var vcLanguages = $("#dropDown_RPSVernacularLanguages").data("kendoDropDownList").value(); 
+
+            for(var i=0;i<rpsVernacularLanguages.length;i++){ 
+           if(vcLanguages == rpsVernacularLanguages[i]["vernacularLanguages"]){ 
+           var  vcFontFile = rpsVernacularLanguages[i]["vernacularFontFile"]; 
+           var  vcReportName = rpsVernacularLanguages[i]["vernacularReportName"]; 
+           }   
+         } 
+             if(vcFontFile == null){ 
+              vcFontFile = "times"; 
+} 
+
+          /* requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName 
+          + "\",\"branchName\":\"" + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" 
+          + stateName + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType 
+          + "\",\"customerId\":\"" + customerId + "\",\"servicePointName\":\"" + servicePointName + "\",\"hostURL\":\"" + hosturl+projectName + "\",\"version\":\"" + reportsVersion +" (API)" 
+          + "\",\"integrationStatus\":\"" + integrationStatus + "\" ,\"vcFontFile\":\"" + vcFontFile + "\",\"vcReportName\":\"" + vcReportName + "\",\"vcLanguages\":\"" + vcLanguages + "\"}"; 
+           */ 
+
+           requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"groupName\":\"" + aesEncryption(groupName) 
+            + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+            + aesEncryption(stateName) + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) 
+            + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",\"servicePointName\":\"" + aesEncryption(servicePointName) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"version\":\"" + aesEncryption(reportsVersion) +"" 
+            + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\" ,\"vcFontFile\":\"" + aesEncryption(vcFontFile) + "\",\"vcReportName\":\"" + aesEncryption(vcReportName) + "\",\"vcLanguages\":\"" + aesEncryption(vcLanguages) + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_loan_documents_rps_new_with_qr_code",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+        } 
+
+        else if(docType == "CGT"){ 
+          debugger; 
+          var groupNumber = loanApplications[0]["groupNumber"]; 
+
+        //  requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"groupNumber\":\"" + groupNumber + "\",\"groupName\":\"" + groupName + "\"}"; 
+         requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"groupNumber\":\"" + aesEncryption(groupNumber) + "\",\"groupName\":\"" + aesEncryption(groupName) + "\"}"; 
+          getDataFromServer(projectName + "/rest/savings_loan_documents/generate_report_cgt_data", getRequestParamString(requestParam), "POST", onVernacularFormDataHandler, errorHandler); 
+        } 
+         else if(docType == "GRT"){ 
+          debugger; 
+          var groupNumber = loanApplications[0]["groupNumber"]; 
+
+          //requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"groupNumber\":\"" + groupNumber + "\",\"groupName\":\"" + groupName + "\"}"; 
+          requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"groupNumber\":\"" + aesEncryption(groupNumber) + "\",\"groupName\":\"" + aesEncryption(groupName) + "\"}"; 
+          getDataFromServer(projectName + "/rest/savings_loan_documents/generate_report_grt_data", getRequestParamString(requestParam), "POST", onVernacularFormDataHandler, errorHandler); 
+        } 
+         else if(hospicashDocType.toUpperCase().includes("NIVABUPA")){ 
+            debugger; 
+             var hosturl = window.location.href; 
+            hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+            hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+            /* requestParam.jsonFilterText = "{\"groupId\":\"" + groupId + "\",\"branchId\":\"" + branchId + "\",\"groupName\":\"" + groupName + "\",\"branchName\":\"" 
+              + branchName + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" + stateName + "\",\"stateId\":\"" + stateId 
+              + "\",\"proposedDisbursementDate\":\"" + asOnDate + "\",\"docType\":\"" + docType + "\",\"customerId\":\"" 
+              + customerId + "\",\"servicePointName\":\"" + servicePointName + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"hostURL\":\"" + hosturl+projectName + "\",\"groupNumber1\":\"" + groupNumber1 + "\",\"centerNumber1\":\"" + centerNumber1 + "\",\"regionId\":\"" + regionId + "\"}"; 
+             */ 
+
+             requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"groupName\":\"" + aesEncryption(groupName) + "\",\"branchName\":\"" 
+              + aesEncryption(branchName) + "\",\"regionName\":\"" + regionName + "\",\"stateName\":\"" + stateName + "\",\"stateId\":\"" + stateId 
+              + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + docType + "\",\"customerId\":\"" 
+              + aesEncryption(customerId) + "\",\"servicePointName\":\"" + servicePointName + "\",\"version\":\"" + reportsVersion + "\",\"integrationStatus\":\"" + integrationStatus + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"groupNumber1\":\"" + aesEncryption(groupNumber1) + "\",\"centerNumber1\":\"" + centerNumber1 + "\",\"regionId\":\"" + regionId + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_hospicash_form_nivabupa",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+          } 
+
+         /* else if(docType == "KEY FACTS"){ 
+            debugger; 
+            var hosturl = window.location.href; 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+          hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+             requestParam.jsonFilterText = "{\"groupNumber\":\"" + aesEncryption(groupNumber) + "\",\"groupId\":\"" + aesEncryption(groupId) + "\",\"groupName\":\"" + aesEncryption(groupName) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"loanAmount\":\"" + aesEncryption(loanamount) 
+              + "\",\"branchName\":\"" + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" 
+              + stateName + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + docType 
+              + "\",\"customerId\":\"" + aesEncryption(customerId) + "\",\"version\":\"" + aesEncryption(reportsVersion) + " (API)" 
+              + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"vcFontFile\":\"" + aesEncryption(vcFontFile) + "\",\"vcReportName\":\"" + aesEncryption(vcReportName) + "\",\"vcLanguages\":\"" + aesEncryption(vcLanguages) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"regionId\":\"" + aesEncryption(regionId) + "\",\"factSheetDate\":\"" + aesEncryption(factSheetDate) + "\"}"; 
+
+            getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_key_facts_statement",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+          } 
+         */ 
+          else if(docType.toUpperCase().includes("KEY FACTS")) 
+          { 
+            debugger; 
+             var hosturl = window.location.href; 
+            hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+            hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+            var vcLanguages = $("#dropDown_KeyFactsVernacularLanguages").data("kendoDropDownList").value(); 
+
+              for(var i=0;i<keyFactsVernacularLanguages.length;i++){ 
+             if(vcLanguages == keyFactsVernacularLanguages[i]["vernacularLanguages"]){ 
+             var  vcFontFile = keyFactsVernacularLanguages[i]["vernacularFontFile"]; 
+             var  vcReportName = keyFactsVernacularLanguages[i]["vernacularReportName"]; 
+             }   
+           } 
+               if(vcFontFile == null){ 
+                vcFontFile = "times"; 
+              } 
+
+             requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"groupName\":\"" + aesEncryption(groupName) + "\",\"branchName\":\"" 
+              + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" + aesEncryption(stateName) + "\",\"stateId\":\"" + aesEncryption(stateId) 
+              + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) + "\",\"customerId\":\"" 
+              + aesEncryption(customerId) + "\",\"servicePointName\":\"" + aesEncryption(servicePointName) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) 
+              + "\",\"vcFontFile\":\"" + aesEncryption(vcFontFile) + "\",\"vcReportName\":\"" + aesEncryption(vcReportName) + "\",\"vcLanguages\":\"" + aesEncryption(vcLanguages) + "\"}"; 
+
+              var groupNumber = loanApplications[0]["groupNumber"]; 
+     getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_key_facts_statement",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+          } 
+          else if(docType == "Anne_A_B_SOC"){ 
+            debugger; 
+             var hosturl = window.location.href; 
+            hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+            hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+           requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"groupName\":\"" + aesEncryption(groupName) + "\",\"branchName\":\"" 
+            + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" + aesEncryption(stateName) + "\",\"stateId\":\"" + aesEncryption(stateId) 
+            + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) + "\",\"customerId\":\"" 
+            + aesEncryption(customerId) + "\",\"servicePointName\":\"" + aesEncryption(servicePointName) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"groupNumber1\":\"" + aesEncryption(groupNumber1) + "\",\"centerNumber1\":\"" + aesEncryption(centerNumber1) + "\",\"regionId\":\"" + aesEncryption(regionId) + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_annex_a_b_soc",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+          } 
+          else if(docType == "Sch_B"){ 
+
+            debugger; 
+             var hosturl = window.location.href; 
+            hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+            hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+           requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"groupName\":\"" + aesEncryption(groupName) + "\",\"branchName\":\"" 
+            + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" + aesEncryption(stateName) + "\",\"stateId\":\"" + aesEncryption(stateId) 
+            + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) + "\",\"customerId\":\"" 
+            + aesEncryption(customerId) + "\",\"servicePointName\":\"" + aesEncryption(servicePointName) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"groupNumber1\":\"" + aesEncryption(groupNumber1) + "\",\"centerNumber1\":\"" + aesEncryption(centerNumber1) + "\",\"regionId\":\"" + aesEncryption(regionId) + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_sch_b",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+          } 
+          else if(docType == "MITCA"){ 
+            debugger; 
+             var hosturl = window.location.href; 
+            hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+            hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+
+           requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"groupName\":\"" + aesEncryption(groupName) + "\",\"branchName\":\"" 
+            + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" + aesEncryption(stateName) + "\",\"stateId\":\"" + aesEncryption(stateId) 
+            + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) + "\",\"customerId\":\"" 
+            + aesEncryption(customerId) + "\",\"servicePointName\":\"" + aesEncryption(servicePointName) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) + "\",\"groupNumber1\":\"" + aesEncryption(groupNumber1) + "\",\"centerNumber1\":\"" + aesEncryption(centerNumber1) + "\",\"regionId\":\"" + aesEncryption(regionId) + "\"}"; 
+
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_MITCA",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+          } 
+
+          else if(docType.toUpperCase().includes("HDFC")){ 
+            debugger; 
+             var hosturl = window.location.href; 
+            hosturl = hosturl.substring(0, hosturl.lastIndexOf("/")) 
+            hosturl = hosturl.substring(0, hosturl.lastIndexOf("/") + 1); 
+            var groupNumber = loanApplications[0]["groupNumber"]; 
+               if(vcFontFile == null){ 
+                vcFontFile = "times"; 
+              } 
+             requestParam.jsonFilterText = "{\"groupId\":\"" + aesEncryption(groupId) + "\",\"branchId\":\"" + aesEncryption(branchId) + "\",\"groupName\":\"" + aesEncryption(groupName) + "\",\"branchName\":\"" 
+              + aesEncryption(branchName) + "\",\"regionName\":\"" + aesEncryption(regionName) + "\",\"stateName\":\"" + aesEncryption(stateName) + "\",\"stateId\":\"" + aesEncryption(stateId) 
+              + "\",\"proposedDisbursementDate\":\"" + aesEncryption(asOnDate) + "\",\"docType\":\"" + aesEncryption(docType) + "\",\"customerId\":\"" 
+              + aesEncryption(customerId) + "\",\"servicePointName\":\"" + aesEncryption(servicePointName) + "\",\"version\":\"" + aesEncryption(reportsVersion) + "\",\"integrationStatus\":\"" + aesEncryption(integrationStatus) + "\",\"hostURL\":\"" + aesEncryption(hosturl+projectName) 
+              + "\",\"vcFontFile\":\"" + aesEncryption(vcFontFile) + "\",\"vcReportName\":\"" + aesEncryption(vcReportName) + "\",\"vcLanguages\":\"" + aesEncryption(vcLanguages) + 
+              "\",\"groupNumber\":\"" + aesEncryption(groupNumber) + "\"}"; 
+
+   //getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_hdfc_insurance_form",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+
+   var value = false; 
+             var selectedInsuranceDocumentName = $("#dropDown_DocumentType").data("kendoDropDownList").value(); 
+
+             outer : for(var j = 0 ;j<customerIds.length;j++){ 
+               var tempCustId = customerIds[j]; 
+                for(var i = 0 ;i<loanApplications.length;i++){ 
+                 if(tempCustId==loanApplications [i]["customerId"]){ 
+                   var  itemName = loanApplications [i]["insuranceName"]; 
+                   if(itemName == selectedInsuranceDocumentName){ 
+                     value = true; 
+                   } 
+                   else{ 
+                     value = false; 
+                     break outer; 
+                   } 
+                 } 
+               } 
+
+             } 
+
+             if(value == true){ 
+               getDataFromServer(projectName+ "/rest/savings_loan_documents/generate_hdfc_insurance_form",getRequestParamString(requestParam), "POST",onVernacularFormDataHandler, errorHandler); 
+          }else{ 
+            alert("Some customers are not belongs to " + selectedInsuranceDocumentName + ". Please download the form with proper insurance document ."); 
+         } 
+          } 
+
+        } 
+        else{ 
+          alert("Please select customers to generate the report"); 
+        } 
+       }else{ 
+        alert("There is no customers to generate the report"); 
+      } 
+      } 
+      } 
+
+     function onSanctionFormDataHandler(response) { 
+        debugger; 
+     var reports = JSON.parse(response); 
+     /* var report= reports.fileName.split("\\"); 
+     var pathfolder = report[0]; 
+     var pathfileName = report[1]; */ 
+     var windowNew= window.open(); 
+        $(windowNew.document.body).html(reports.fileName); 
+     //location.href = "DisplayImage?reports="+reports.reportId+"&reportName="+pathfolder +"/" + pathfileName ; 
+     } 
+
+     function onPSLDeclarationFormDataHandler(response) { 
+        debugger; 
+     var reports = JSON.parse(response); 
+     if(reports.fileName==""){ 
+        alert("The group members not opted loan purpose which satisfies the PSL Declaration Category report."); 
+     }else{ 
+        var windowNew= window.open(); 
+          $(windowNew.document.body).html(reports.fileName); 
+     } 
+
+     } 
+
+    function validation() { 
+      var stringStr = ""; 
+
+      if ($("#dropDown_DocumentType").data("kendoDropDownList").value() == "") { 
+        stringStr += "Document Type is mandatory.\n"; 
+      } 
+      if ($("#dropDown_Group").data("kendoDropDownList").value() == "") { 
+        stringStr += "Group is mandatory.\n"; 
+      } 
+
+      if (stringStr.length > 1) { 
+        alert(stringStr); 
+        return false; 
+      } else { 
+        return true; 
+      } 
+    } 
+
+     function checkAll(ele) 
+     { 
+   debugger; 
+   var customer = $(ele).is(':checked'); 
+   var grid = $('#documents_ReportsGrid').data('kendoGrid'); 
+   if (customer == true) 
+   { 
+   $('.chkFormols').prop('checked', true); 
+   } 
+   else 
+   { 
+   $('.chkFormols').prop('checked', false); 
+   } 
+   } 
+
+     function onDocumentTypeReceiveHandler(response) { 
+        debugger; 
+        documentType = []; 
+        for (var i = 0; i < response.length; i++) { 
+          objGroup = new LoanDocumentsDO(); 
+          objGroup.fromJson(response[i]); 
+          documentType.push(objGroup); 
+        } 
+        dropDownDocumentType = $("#dropDown_DocumentType").data("kendoDropDownList"); 
+        dropDownDocumentType.dataSource.data(documentType); 
+        dropDownDocumentType.refresh(); 
+      } 
+
+     function onVernacularLanguagesReceiveHandler(response) { 
+        debugger; 
+        vernacularLanguages = []; 
+        for (var i = 0; i < response.length; i++) { 
+          objGroup = new LoanDocumentsDO(); 
+          objGroup.fromJson(response[i]); 
+          vernacularLanguages.push(objGroup); 
+        } 
+        dropDownVernacularLanguages = $("#dropDown_VernacularLanguages").data("kendoDropDownList"); 
+        dropDownVernacularLanguages.dataSource.data(vernacularLanguages); 
+        dropDownVernacularLanguages.refresh(); 
+
+        if(response.length==0){ 
+          getDataFromServer(projectName+ "/rest/savings_loan_documents/get_vernacular_default_language", 
+        getRequestParamString(getRequestParamObject()), "POST",onVernacularDefaultLanguagesReceiveHandler, errorHandler); 
+        } 
+      } 
+
+     function onVernacularDefaultLanguagesReceiveHandler(response) { 
+        debugger; 
+        vernacularLanguages = []; 
+        for (var i = 0; i < response.length; i++) { 
+          objGroup = new LoanDocumentsDO(); 
+          objGroup.fromJson(response[i]); 
+          vernacularLanguages.push(objGroup); 
+        } 
+        dropDownVernacularLanguages = $("#dropDown_VernacularLanguages").data("kendoDropDownList"); 
+        dropDownVernacularLanguages.dataSource.data(vernacularLanguages); 
+        dropDownVernacularLanguages.refresh(); 
+      } 
+
+     function onDocumentTypeChange(e) { 
+        debugger; 
+        var docType = $("#dropDown_DocumentType").data("kendoDropDownList").text(); 
+
+         if($("#dropDown_DocumentType").data("kendoDropDownList").value() == "JLG New"){ 
+           $("#JLGLoanAgreementVernacularLanguages").hide(); 
+           $("#SALAVernacularLanguages").hide(); 
+           $("#FactSheetVernacularLanguages").hide(); 
+           $("#RPSVernacularLanguages").hide(); 
+           $("#VernacularLanguages").show(); 
+           $("#BharatiAxaVernacularLanguages").hide(); 
+           $("#EdelweissVernacularLanguages").hide(); 
+           $("#KOTEKVernacularLanguages").hide(); 
+ $("#KeyFactsStatementVernacularLanguages").hide(); 
+         } 
+         else if($("#dropDown_DocumentType").data("kendoDropDownList").value() == "JLG"){ 
+           $("#VernacularLanguages").hide(); 
+           $("#SALAVernacularLanguages").hide(); 
+           $("#FactSheetVernacularLanguages").hide(); 
+           $("#RPSVernacularLanguages").hide(); 
+           $("#JLGLoanAgreementVernacularLanguages").show(); 
+           $("#BharatiAxaVernacularLanguages").hide(); 
+           $("#EdelweissVernacularLanguages").hide(); 
+           $("#KOTEKVernacularLanguages").hide(); 
+ $("#KeyFactsStatementVernacularLanguages").hide(); 
+         } 
+         else if($("#dropDown_DocumentType").data("kendoDropDownList").value() == "SA_LA"){ 
+           $("#VernacularLanguages").hide(); 
+           $("#JLGLoanAgreementVernacularLanguages").hide(); 
+           $("#FactSheetVernacularLanguages").hide(); 
+           $("#RPSVernacularLanguages").hide(); 
+           $("#SALAVernacularLanguages").show(); 
+           $("#BharatiAxaVernacularLanguages").hide(); 
+           $("#EdelweissVernacularLanguages").hide(); 
+           $("#KOTEKVernacularLanguages").hide(); 
+ $("#KeyFactsStatementVernacularLanguages").hide(); 
+         } 
+         else if($("#dropDown_DocumentType").data("kendoDropDownList").value() == "FACTSHEET"){ 
+           $("#VernacularLanguages").hide(); 
+           $("#JLGLoanAgreementVernacularLanguages").hide(); 
+           $("#SALAVernacularLanguages").hide(); 
+           $("#RPSVernacularLanguages").hide(); 
+           $("#FactSheetVernacularLanguages").show(); 
+           $("#BharatiAxaVernacularLanguages").hide(); 
+           $("#EdelweissVernacularLanguages").hide(); 
+           $("#KOTEKVernacularLanguages").hide(); 
+ $("#KeyFactsStatementVernacularLanguages").hide(); 
+         } 
+         else if($("#dropDown_DocumentType").data("kendoDropDownList").value() == "RPS" || $("#dropDown_DocumentType").data("kendoDropDownList").value() == "RPS_NEW"){ 
+           $("#VernacularLanguages").hide(); 
+           $("#JLGLoanAgreementVernacularLanguages").hide(); 
+           $("#SALAVernacularLanguages").hide(); 
+           $("#FactSheetVernacularLanguages").hide(); 
+           $("#RPSVernacularLanguages").show(); 
+           $("#BharatiAxaVernacularLanguages").hide(); 
+           $("#EdelweissVernacularLanguages").hide(); 
+           $("#KOTEKVernacularLanguages").hide(); 
+ $("#KeyFactsStatementVernacularLanguages").hide(); 
+         } 
+         else if($("#dropDown_DocumentType").data("kendoDropDownList").value() == "BHARATI AXA"){ 
+           $("#VernacularLanguages").hide(); 
+           $("#JLGLoanAgreementVernacularLanguages").hide(); 
+           $("#SALAVernacularLanguages").hide(); 
+           $("#RPSVernacularLanguages").hide(); 
+           $("#FactSheetVernacularLanguages").hide(); 
+           $("#EdelweissVernacularLanguages").hide(); 
+           $("#KOTEKVernacularLanguages").hide(); 
+           $("#BharatiAxaVernacularLanguages").show(); 
+ $("#KeyFactsStatementVernacularLanguages").hide(); 
+         } 
+         else if($("#dropDown_DocumentType").data("kendoDropDownList").value()== "Edelweiss"){ 
+         $("#VernacularLanguages").hide(); 
+         $("#JLGLoanAgreementVernacularLanguages").hide(); 
+         $("#SALAVernacularLanguages").hide(); 
+         $("#FactSheetVernacularLanguages").hide(); 
+         $("#RPSVernacularLanguages").hide(); 
+         $("#BharatiAxaVernacularLanguages").hide(); 
+         $("#KOTEKVernacularLanguages").hide(); 
+         $("#EdelweissVernacularLanguages").show(); 
+ $("#KeyFactsStatementVernacularLanguages").hide(); 
+         } 
+         /* else if($("#dropDown_DocumentType").data("kendoDropDownList").value() == "KOTAK"){ */ 
+           else if(($("#dropDown_DocumentType").data("kendoDropDownList").value()).toUpperCase().includes("KOTAK")){ 
+           $("#VernacularLanguages").hide(); 
+           $("#JLGLoanAgreementVernacularLanguages").hide(); 
+           $("#SALAVernacularLanguages").hide(); 
+           $("#RPSVernacularLanguages").hide(); 
+           $("#FactSheetVernacularLanguages").hide(); 
+           $("#BharatiAxaVernacularLanguages").hide(); 
+           $("#EdelweissVernacularLanguages").hide(); 
+           $("#KOTEKVernacularLanguages").show(); 
+ $("#KeyFactsStatementVernacularLanguages").hide(); 
+
+         } 
+        else if($("#dropDown_DocumentType").data("kendoDropDownList").value() == "KEY FACTS"){ 
+             $("#VernacularLanguages").hide(); 
+             $("#JLGLoanAgreementVernacularLanguages").hide(); 
+             $("#SALAVernacularLanguages").hide(); 
+             $("#RPSVernacularLanguages").hide(); 
+             $("#FactSheetVernacularLanguages").hide(); 
+             $("#EdelweissVernacularLanguages").hide(); 
+             $("#KOTEKVernacularLanguages").hide(); 
+             $("#BharatiAxaVernacularLanguages").hide(); 
+   $("#KeyFactsStatementVernacularLanguages").show(); 
+         } 
+        else if($("#dropDown_DocumentType").data("kendoDropDownList").value() == "SL"){ 
+           $("#VernacularLanguages").hide(); 
+           $("#JLGLoanAgreementVernacularLanguages").hide(); 
+           $("#SALAVernacularLanguages").hide(); 
+           $("#RPSVernacularLanguages").hide(); 
+           $("#FactSheetVernacularLanguages").hide(); 
+           $("#EdelweissVernacularLanguages").hide(); 
+           $("#KOTEKVernacularLanguages").hide(); 
+           $("#BharatiAxaVernacularLanguages").hide(); 
+           $("#KeyFactsStatementVernacularLanguages").hide(); 
+
+           $("#SanctionLetterVernacularLanguages").show(); 
+        } 
+         else{ 
+           $("#VernacularLanguages").hide(); 
+           $("#JLGLoanAgreementVernacularLanguages").hide(); 
+           $("#SALAVernacularLanguages").hide(); 
+           $("#FactSheetVernacularLanguages").hide(); 
+           $("#RPSVernacularLanguages").hide(); 
+           $("#BharatiAxaVernacularLanguages").hide(); 
+           $("#EdelweissVernacularLanguages").hide(); 
+           $("#KOTEKVernacularLanguages").hide(); 
+ $("#KeyFactsStatementVernacularLanguages").hide(); 
+ $("#SanctionLetterVernacularLanguages").hide(); 
+         } 
+
+     if(docType.toUpperCase().includes("CARE") || docType.toUpperCase().includes("ICICI") || docType.toUpperCase().includes("NIVABUPA")){ 
+           debugger; 
+         var requestParam = getRequestParamObject(); 
+          var proposedDisbursedDate = $("#datePicker_AsOnDate").data("kendoDatePicker").value(); 
+          var proposedDate = kendo.toString(proposedDisbursedDate,"yyyy-MM-dd"); 
+
+          if(proposedDate == null){ 
+            proposedDate =kendo.toString(new Date(), "yyyy-MM-dd"); 
+          } 
+          requestParam.jsonFilterText = "{\"groupId\":\"" +aesEncryption($("#dropDown_Group").data("kendoDropDownList").value())+ "\",\"proposedDisbursementDate\":\"" + aesEncryption(proposedDate) + "\",\"hospicashVendorId\":\"" + aesEncryption($("#dropDown_DocumentType").data("kendoDropDownList").value()) + "\"}"; 
+
+          getDataFromServer(projectName + "/rest/loan_product_enrollment/get_hospicash_vendor_loan_documents_data", 
+              getRequestParamString(requestParam), "POST", 
+              onLoanApplicationsReceiveHandler, errorHandler); 
+         } 
+         else{ 
+           debugger; 
+           var requestParam = getRequestParamObject(); 
+            var proposedDisbursedDate = $("#datePicker_AsOnDate").data("kendoDatePicker").value(); 
+
+            var proposedDate = kendo.toString(proposedDisbursedDate,"yyyy-MM-dd"); 
+
+            if(proposedDate == null){ 
+              proposedDate =kendo.toString(new Date(), "yyyy-MM-dd"); 
+            } 
+            requestParam.jsonFilterText = "{\"groupId\":\"" +aesEncryption($("#dropDown_Group").data("kendoDropDownList").value())+ "\",\"proposedDisbursementDate\":\"" + aesEncryption(proposedDate) + "\"}"; 
+
+            getDataFromServer(projectName + "/rest/loan_product_enrollment/get_loan_Documents_data", 
+                getRequestParamString(requestParam), "POST", 
+                onLoanApplicationsReceiveHandler, errorHandler); 
+         } 
+
+      } 
+
+     function onVernacularFormDataHandler(response) { 
+      debugger; 
+      var reports = JSON.parse(response); 
+   var report=reports.fileName; 
+   if(report.includes("/")){ 
+      report= report.split("/"); 
+   } 
+   else if(report.includes("\\")){ 
+   report= report.split("\\"); 
+   } 
+   var pathfolder = report[0]; 
+   var pathfileName = report[1]; 
+   var loginId = getRequestParamObject().accessCode; 
+   // location.href = "DisplayImage?reports="+reports.reportId+"&reportName="+pathfolder +"/" + pathfileName ; 
+   /* location.href = "DisplayImage?reports=" +reports.reportId +"&accessCode="+getRequestParamObject().accessCode + "&reportName="+pathfolder +"/" + pathfileName ; */ 
+
+   $.ajax({ 
+   url:projectName + "/DisplayImage1", 
+   xhrFields: { 
+   responseType: "blob", 
+   }, 
+   type: "post", 
+   data: { 
+      reports : reports.reportId, 
+      reportName : pathfolder +"/" + pathfileName, 
+      accessCode : loginId 
+   },   
+   success: function(data) { 
+      debugger; 
+   var link=document.createElement('a'); 
+   link.setAttribute('target','_blank'); 
+   link.href=window.URL.createObjectURL(data); 
+   link.download= pathfileName; 
+   link.click(); 
+   }, 
+   error: function (e, x) { 
+     alert("Oops! something went wrong. Please contact administrator."); 
+   }, 
+       }); 
+
+   // location.href = "DisplayImage?reports="+reports.reportId+"&reportName=" + pathfileName ; 
+   } 
+
+       function onJLGLoanAgreementVernacularLanguagesReceiveHandler (response) { 
+          debugger; 
+          jlgLoanAgreementvernacularLanguages = []; 
+          for (var i = 0; i < response.length; i++) { 
+            objGroup = new LoanDocumentsDO(); 
+            objGroup.fromJson(response[i]); 
+            jlgLoanAgreementvernacularLanguages.push(objGroup); 
+          } 
+          dropDownjlgLoanAgreementVernacularLanguages = $("#dropDown_JLGLoanAgreementVernacularLanguages").data("kendoDropDownList"); 
+          dropDownjlgLoanAgreementVernacularLanguages.dataSource.data(jlgLoanAgreementvernacularLanguages); 
+          dropDownjlgLoanAgreementVernacularLanguages.refresh(); 
+
+          if(response.length==0){ 
+            getDataFromServer(projectName+ "/rest/savings_loan_documents/get_jlg_loan_agreement_vernacular_default_language", 
+          getRequestParamString(getRequestParamObject()), "POST",onJLGLoanAgreementVernacularDefaultLanguagesReceiveHandler, errorHandler); 
+          } 
+        } 
+
+       function onJLGLoanAgreementVernacularDefaultLanguagesReceiveHandler(response) { 
+          debugger; 
+          jlgLoanAgreementvernacularLanguages = []; 
+          for (var i = 0; i < response.length; i++) { 
+            objGroup = new LoanDocumentsDO(); 
+            objGroup.fromJson(response[i]); 
+            jlgLoanAgreementvernacularLanguages.push(objGroup); 
+          } 
+          dropDownjlgLoanAgreementVernacularLanguages = $("#dropDown_JLGLoanAgreementVernacularLanguages").data("kendoDropDownList"); 
+          dropDownjlgLoanAgreementVernacularLanguages.dataSource.data(jlgLoanAgreementvernacularLanguages); 
+          dropDownjlgLoanAgreementVernacularLanguages.refresh(); 
+        } 
+
+       function onsalaVernacularLanguagesReceiveHandler (response) { 
+          debugger; 
+          salaVernacularLanguages = []; 
+          for (var i = 0; i < response.length; i++) { 
+            objGroup = new LoanDocumentsDO(); 
+            objGroup.fromJson(response[i]); 
+            salaVernacularLanguages.push(objGroup); 
+          } 
+          dropDownsalaVernacularLanguages = $("#dropDown_SALAVernacularLanguages").data("kendoDropDownList"); 
+          dropDownsalaVernacularLanguages.dataSource.data(salaVernacularLanguages); 
+          dropDownsalaVernacularLanguages.refresh(); 
+
+        } 
+
+       function onFactSheetVernacularLanguagesReceiveHandler (response) { 
+          debugger; 
+          factSheetVernacularLanguages = []; 
+          for (var i = 0; i < response.length; i++) { 
+            objGroup = new LoanDocumentsDO(); 
+            objGroup.fromJson(response[i]); 
+            factSheetVernacularLanguages.push(objGroup); 
+          } 
+          dropDownFactSheetVernacularLanguages = $("#dropDown_FactSheetVernacularLanguages").data("kendoDropDownList"); 
+          dropDownFactSheetVernacularLanguages.dataSource.data(factSheetVernacularLanguages); 
+          dropDownFactSheetVernacularLanguages.refresh(); 
+
+          if(response.length==0){ 
+            getDataFromServer(projectName+ "/rest/savings_loan_documents/get_jlg_loan_agreement_vernacular_default_language", 
+          getRequestParamString(getRequestParamObject()), "POST",onFactSheetVernacularDefaultLanguagesReceiveHandler, errorHandler); 
+          } 
+
+        } 
+       function onFactSheetVernacularDefaultLanguagesReceiveHandler (response) { 
+          debugger; 
+          factSheetVernacularLanguages = []; 
+          for (var i = 0; i < response.length; i++) { 
+            objGroup = new LoanDocumentsDO(); 
+            objGroup.fromJson(response[i]); 
+            factSheetVernacularLanguages.push(objGroup); 
+          } 
+          dropDownFactSheetVernacularLanguages = $("#dropDown_FactSheetVernacularLanguages").data("kendoDropDownList"); 
+          dropDownFactSheetVernacularLanguages.dataSource.data(factSheetVernacularLanguages); 
+          dropDownFactSheetVernacularLanguages.refresh(); 
+      } 
+
+       function onRPSVernacularLanguagesReceiveHandler (response) { 
+          debugger; 
+          rpsVernacularLanguages = []; 
+          for (var i = 0; i < response.length; i++) { 
+            objGroup = new LoanDocumentsDO(); 
+            objGroup.fromJson(response[i]); 
+            rpsVernacularLanguages .push(objGroup); 
+          } 
+          dropDownRPSVernacularLanguages = $("#dropDown_RPSVernacularLanguages").data("kendoDropDownList"); 
+          dropDownRPSVernacularLanguages.dataSource.data(rpsVernacularLanguages); 
+          dropDownRPSVernacularLanguages.refresh(); 
+
+          if(response.length==0){ 
+            getDataFromServer(projectName+ "/rest/savings_loan_documents/get_jlg_loan_agreement_vernacular_default_language", 
+          getRequestParamString(getRequestParamObject()), "POST",onRPSVernacularDefaultLanguagesReceiveHandler, errorHandler); 
+          } 
+
+        } 
+
+       function onRPSVernacularDefaultLanguagesReceiveHandler (response) { 
+          debugger; 
+          rpsVernacularLanguages = []; 
+          for (var i = 0; i < response.length; i++) { 
+            objGroup = new LoanDocumentsDO(); 
+            objGroup.fromJson(response[i]); 
+            rpsVernacularLanguages.push(objGroup); 
+          } 
+          dropDownRPSVernacularLanguages = $("#dropDown_RPSVernacularLanguages").data("kendoDropDownList"); 
+          dropDownRPSVernacularLanguages.dataSource.data(rpsVernacularLanguages); 
+          dropDownRPSVernacularLanguages.refresh(); 
+      } 
+
+       function onBharatiAXAVernacularLanguagesReceiveHandler (response) { 
+          debugger; 
+          bharatiAxaVernacularLanguages = []; 
+          for (var i = 0; i < response.length; i++) { 
+            objGroup = new LoanDocumentsDO(); 
+            objGroup.fromJson(response[i]); 
+            bharatiAxaVernacularLanguages.push(objGroup); 
+          } 
+          dropDownbharatiAxaVernacularLanguages = $("#dropDown_BharatiAxaVernacularLanguages").data("kendoDropDownList"); 
+          dropDownbharatiAxaVernacularLanguages.dataSource.data(bharatiAxaVernacularLanguages); 
+          dropDownbharatiAxaVernacularLanguages.refresh(); 
+
+          if(response.length==0){ 
+            getDataFromServer(projectName+ "/rest/savings_loan_documents/get_jlg_loan_agreement_vernacular_default_language", 
+          getRequestParamString(getRequestParamObject()), "POST",onBharatiAxaVernacularDefaultLanguagesReceiveHandler, errorHandler); 
+          } 
+
+        } 
+
+       function onBharatiAxaVernacularDefaultLanguagesReceiveHandler (response){ 
+
+         debugger; 
+         bharatiAxaVernacularLanguages = []; 
+          for (var i = 0; i < response.length; i++) { 
+            objGroup = new LoanDocumentsDO(); 
+            objGroup.fromJson(response[i]); 
+            bharatiAxaVernacularLanguages.push(objGroup); 
+          } 
+          dropDownbharatiAxaVernacularLanguages = $("#dropDown_BharatiAxaVernacularLanguages").data("kendoDropDownList"); 
+          dropDownbharatiAxaVernacularLanguages.dataSource.data(bharatiAxaVernacularLanguages); 
+          dropDownbharatiAxaVernacularLanguages.refresh(); 
+       } 
+
+       function onEdelweissVernacularLanguagesReceiveHandler (response) { 
+          debugger; 
+          edelweissVernacularLanguages = []; 
+          for (var i = 0; i < response.length; i++) { 
+            objGroup = new LoanDocumentsDO(); 
+            objGroup.fromJson(response[i]); 
+            edelweissVernacularLanguages .push(objGroup); 
+          } 
+          dropDownEdelweissVernacularLanguages = $("#dropDown_EdelweissVernacularLanguages").data("kendoDropDownList"); 
+          dropDownEdelweissVernacularLanguages.dataSource.data(edelweissVernacularLanguages); 
+          dropDownEdelweissVernacularLanguages.refresh(); 
+
+           if(response.length==0){ 
+            getDataFromServer(projectName+ "/rest/savings_loan_documents/get_jlg_loan_agreement_vernacular_default_language", 
+          getRequestParamString(getRequestParamObject()), "POST",onEdelweissVernacularDefaultLanguagesReceiveHandler, errorHandler); 
+          } 
+
+        } 
+
+       function onEdelweissVernacularDefaultLanguagesReceiveHandler (response) { 
+          debugger; 
+          edelweissVernacularLanguages = []; 
+          for (var i = 0; i < response.length; i++) { 
+            objGroup = new LoanDocumentsDO(); 
+            objGroup.fromJson(response[i]); 
+            edelweissVernacularLanguages.push(objGroup); 
+          } 
+          dropDownEdelweissVernacularLanguages = $("#dropDown_EdelweissVernacularLanguages").data("kendoDropDownList"); 
+          dropDownEdelweissVernacularLanguages.dataSource.data(edelweissVernacularLanguages); 
+          dropDownEdelweissVernacularLanguages.refresh(); 
+      } 
+
+     function onKOTAKInsuranceVernacularLanguagesReceiveHandler(response) { 
+          debugger; 
+          kotakVernacularLanguages = []; 
+          for (var i = 0; i < response.length; i++) { 
+            objGroup = new LoanDocumentsDO(); 
+            objGroup.fromJson(response[i]); 
+            kotakVernacularLanguages.push(objGroup); 
+          } 
+          dropDownKOTAKVernacularLanguages = $("#dropDown_KOTEKVernacularLanguages").data("kendoDropDownList"); 
+          dropDownKOTAKVernacularLanguages.dataSource.data(kotakVernacularLanguages); 
+          dropDownKOTAKVernacularLanguages.refresh(); 
+
+           if(response.length==0){ 
+              getDataFromServer(projectName+ "/rest/savings_loan_documents/get_vernacular_default_language", 
+            getRequestParamString(getRequestParamObject()), "POST",onKotak
